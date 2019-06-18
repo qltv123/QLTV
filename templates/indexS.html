@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <li role="presentation"><a href="TrangChu">Trang chủ</a>
+        </li>
+        <form method="post">
+                <label>Mã sách:</label><br>
+                <input name="mas"><br>
+                <label>Tên sách:</label><br>
+                <input name="name"><br>
+                <label>Giá:</label><br>
+                <input name="price"><br>
+                <label>Nhà xuất bản:</label><br>
+                <input name="nxb">
+                <p><input type="submit" value="submit"/></p>
+            </form>
+        
+        
+            <h1>Danh sách</h1>
+            {% for i in dulieu %}
+            
+            <h2>{{ i.name }} : {{ i.price }}</h2>
+            
+            {% endfor %}
+         
+</body>
+</html>
