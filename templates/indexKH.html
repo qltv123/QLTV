@@ -5,11 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Thẻ thư viện</title>
+    <script src="/App_Themes/jQuery/jquery.lib/jquery-1.9.1.min.js"></script>
+    <script src="/App_Themes/jQuery/jquery.validate/jquery.validate.js"></script>
+    <script src="/App_Themes/jQuery/jquery.lib.ui/jquery-ui.js"></script>
+    <script src="/App_Themes/jQuery/jquery.tabs.rotate/jquery-ui-tabs-rotate.js"></script>
+        
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="App_Themes/jQuery/jquery.fontawesome/font-awesome.min.css" />
+    <!-- Bootstrap 3.3.6 -->
+    <link href="App_Themes/Css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <!-- Ionicons -->
+    <link href="App_Themes/jQuery/jquery.ionicons/jquery.ionicons.css" rel="stylesheet" />
+    <!-- iCheckBox -->
+    <link href="App_Themes/jQuery/jquery.icheckbox/jquery.icheckbox.css" rel="stylesheet" />
+    <!-- select -->
+    <link href="App_Themes/jQuery/jquery.bootstrap.select/bootstrap-select.min.css" rel="stylesheet" />
+    <!-- date.picker -->
+    <link href="App_Themes/jQuery/jquery.date.picker/jquery.date.picker.css" rel="stylesheet" />
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="/App_Themes/jQuery/jquery.fix.ie/jquery.fix.ie.html5shiv.js"></script>
+        <script src="/App_Themes/jQuery/jquery.fix.ie/jquery.fix.ie.respond.js"></script>
+    <![endif]-->
+
+    <!-- jQuery 2.2.0 -->
+    <script src="/App_Themes/jQuery/jquery.lib/jquery-2.2.0.min.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="/App_Themes/jQuery/jquery.lib/jquery-1.9.1.min.js"></script>
+        <script src="/App_Themes/jQuery/jquery.fix.ie/jquery-migrate-1.1.1.js"></script>
+    <![endif]-->
+    
+    <!-- jQuery UI 1.11.4 -->
+    <script src="/App_Themes/jQuery/jquery.lib.ui/jquery-ui.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="/App_Themes/jQuery/jquery.bootstrap.lib/js/jquery.bootstrap.lib.js"></script>
+    <!-- iCheckBox -->
+    <script src="/App_Themes/jQuery/jquery.icheckbox/jquery.icheckbox.js"></script>
+    <!-- select -->
+    <script src="/App_Themes/jQuery/jquery.bootstrap.select/bootstrap-select.min.js"></script>
+
+    
+
+    <style type="text/css">
+        .tblData {
+        }
+
+            .tblData td {
+                vertical-align: middle;
+            }
+
+        .radThoiHanThe label {
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="./RegisterCard2Reader.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDMyOTY4ODU3D2QWAmYPZBYCAgMPZBYIAgMPZBYGZg8WAh4EVGV4dAVTPGltZyBzcmM9Jy4uLy4uL1VwbG9hZC8yMDE3LzExLzE0L2Jhbm5lcl8yMDE3Tm92MTRfMDgyNTUyOTc5LnBuZycgYm9yZGVyPScwJz48L2ltZz5kAgEPFgIfAAW1ATxsaT48YSBocmVmPSdodHRwOi8vdGh1dmllbmhhbm9pLm9yZy52bi9TaXRlbWFwLmFzcHgnIHRhcmdldD0nX3NlbGYnPlPGoSDEkeG7kyB0cmFuZzwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vdGh1dmllbmhhbm9pLm9yZy52bi9Db250YWN0LmFzcHgnIHRhcmdldD0nX3NlbGYnPkxpw6puIGjhu4c8L2E+PC9saT5kAgQPD2QWAh4LUGxhY2Vob2xkZXIFFlThu6sga2jDs2EgdMOsbSBraeG6v21kAgUPZBYCAgEPFgIfAAWtHDxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nIycgdGFyZ2V0PSdfc2VsZic+PHNwYW4+R2nhu5tpIHRoaeG7h3U8L3NwYW4+PC9hPjx1bD48bGkgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9Jy9JbnRyb2R1Y2UuYXNweD9pZD0xJyB0YXJnZXQ9J19zZWxmJz5HaeG7m2kgdGhp4buHdSB24buBIHRoxrAgdmnhu4duPC9hPjwvbGk+PGxpIGNsYXNzPSdoYXMtc3ViJz48YSBocmVmPScvSW50cm9kdWNlLmFzcHg/aWQ9NCcgdGFyZ2V0PSdfc2VsZic+Q2jhu6ljIG7Eg25nIG5oaeG7h20gduG7pTwvYT48L2xpPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0naHR0cDovL3RodXZpZW5oYW5vaS5vcmcudm4vSW50cm9kdWNlLmFzcHg/aWQ9MycgdGFyZ2V0PSdfc2VsZic+Q8ahIGPhuqV1IHThu5UgY2jhu6ljPC9hPjx1bD48bGkgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9Jy9JbnRyb2R1Y2UuYXNweD9JZD0yYmQyYjk5NC0wMWM0LTQyYzAtOWNjYS0zNjJhMmM5Mzg2ZmYnIHRhcmdldD0nX3NlbGYnPkJhbiBnacOhbSDEkeG7kWM8L2E+PC9saT48bGkgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9Jy9EZXBhcnRtZW50R3JvdXAuYXNweCcgdGFyZ2V0PSdfc2VsZic+UGjDsm5nIGJhbjwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9J2h0dHA6Ly90aHV2aWVuaGFub2kub3JnLnZuL0ludHJvZHVjZS5hc3B4P2lkPTYnIHRhcmdldD0nX3NlbGYnPkPGoSBz4bufIHbhuq10IGNo4bqldDwvYT48L2xpPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nL0ludHJvZHVjZS5hc3B4P2lkPTInIHRhcmdldD0nX3NlbGYnPk5ndeG7k24gbOG7sWMgdGjDtG5nIHRpbjwvYT48L2xpPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nL1BhcnRuZXJHcm91cC5hc3B4JyB0YXJnZXQ9J19zZWxmJz5N4bqhbmcgbMaw4bubaSB0aMawIHZp4buHbjwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9JyMnIHRhcmdldD0nX3NlbGYnPjxzcGFuPlRpbiB04bupYzwvc3Bhbj48L2E+PHVsPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nL05ld3NHcm91cC5hc3B4P2lkPTInIHRhcmdldD0nX3NlbGYnPlRpbiB04bupYyBob+G6oXQgxJHhu5luZzwvYT48L2xpPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nL05ld3NHcm91cC5hc3B4P2lkPTEnIHRhcmdldD0nX3NlbGYnPlPhu7Ega2nhu4duIHPhuq9wIHThu5tpPC9hPjwvbGk+PGxpIGNsYXNzPSdoYXMtc3ViJz48YSBocmVmPScvTmV3c0dyb3VwLmFzcHg/aWQ9MycgdGFyZ2V0PSdfc2VsZic+VGluIHThu6ljIG5naGnhu4dwIHbhu6U8L2E+PC9saT48bGkgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9Jy9WaWRlb0dyb3VwLmFzcHgnIHRhcmdldD0nX3NlbGYnPlRpbiB2aWRlbzwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9JyMnIHRhcmdldD0nX3NlbGYnPjxzcGFuPlRyYSBj4bupdTwvc3Bhbj48L2E+PHVsPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0naHR0cDovLzE4My45MS4yLjE1Ny9vcGFjJyB0YXJnZXQ9J190YXJnZXQnPkNTREwgU8OhY2g8L2E+PC9saT48bGkgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9J2h0dHA6Ly8xODMuOTEuMi4xNTcvb3BhY2tpZCcgdGFyZ2V0PSdfdGFyZ2V0Jz5DU0RMIFPDoWNoIHRoaeG6v3UgbmhpPC9hPjwvbGk+PGxpIGNsYXNzPSdoYXMtc3ViJz48YSBocmVmPSdodHRwOi8vMTgzLjkxLjIuMTU3L29wYWMvV0luZGV4LmFzcHg/dXJsPVdSZWFkLmFzcHgnIHRhcmdldD0nX3RhcmdldCc+Q1NETCBTw6FjaCBuw7NpPC9hPjwvbGk+PGxpIGNsYXNzPSdoYXMtc3ViJz48YSBocmVmPSdodHRwOi8vMTgzLjkxLjIuMTU3L29wYWMvV0luZGV4LmFzcHg/dXJsPXdwU2VhcmNoU2ltcGxlLmFzcHgnIHRhcmdldD0nX3RhcmdldCc+Q1NETCBTw6FjaCB0b8OgbiB2xINuPC9hPjwvbGk+PC91bD48L2xpPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nIycgdGFyZ2V0PSdfc2VsZic+PHNwYW4+TmdoaeG7h3AgduG7pTwvc3Bhbj48L2E+PHVsPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nL0xlZ2FsR3JvdXAuYXNweCcgdGFyZ2V0PSdfc2VsZic+VsSDbiBi4bqjbiBxdXkgcGjhuqFtIHBow6FwIGx14bqtdDwvYT48L2xpPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nL0RvY3VtZW50R3JvdXAuYXNweCcgdGFyZ2V0PSdfc2VsZic+VMOgaSBsaeG7h3UgbmdoaeG7h3AgduG7pTwvYT48L2xpPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nL01ham9yR3JvdXAuYXNweCcgdGFyZ2V0PSdfc2VsZic+TmdoaeG7h3AgduG7pSB0aMawIHZp4buHbjwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9JyMnIHRhcmdldD0nX3NlbGYnPjxzcGFuPlPhuqNuIHBo4bqpbSAtIEThu4tjaCB24bulPC9zcGFuPjwvYT48dWw+PGxpIGNsYXNzPSdoYXMtc3ViJz48YSBocmVmPScvU3ViamVjdEdyb3VwLmFzcHgnIHRhcmdldD0nX3NlbGYnPlRoxrAgbeG7pWMgY2h1ecOqbiDEkeG7gTwvYT48L2xpPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nL0Jvb2tzR3JvdXAuYXNweCcgdGFyZ2V0PSdfc2VsZic+VGjGsCBt4bulYyBzw6FjaCBt4bubaTwvYT48L2xpPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nL1NlcnZpY2VzR3JvdXAuYXNweCcgdGFyZ2V0PSdfc2VsZic+ROG7i2NoIHbhu6UgdGjGsCB2aeG7h248L2E+PC9saT48bGkgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9Jy9SZWFkR3JvdXAuYXNweCcgdGFyZ2V0PSdfc2VsZic+U8OhY2ggbsOzaSBjaG8gbmfGsOG7nWkga2hp4bq/bSB0aOG7izwvYT48L2xpPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nUmV2aWV3QnlTdWJqZWN0R3JvdXAuYXNweCcgdGFyZ2V0PSdfc2VsZic+xJBp4buDbSBzw6FjaCB0aGVvIGNodXnDqm4gxJHhu4E8L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSdoYXMtc3ViJz48YSBocmVmPScjJyB0YXJnZXQ9J19zZWxmJz48c3Bhbj5IxrDhu5tuZyBk4bqrbjwvc3Bhbj48L2E+PHVsPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nL0luc3RydWN0aW9uLmFzcHg/SWQ9OThiYjgyNGYtM2ZiZS00YzA1LTg0OTQtZWQ5ZDUwNGUwM2VjJyB0YXJnZXQ9J19zZWxmJz5UaOG7pyB04bulYyBsw6BtIHRo4bq7PC9hPjwvbGk+PGxpIGNsYXNzPSdoYXMtc3ViJz48YSBocmVmPScvSW5zdHJ1Y3Rpb24uYXNweD9JZD05NTk3YzMwNS01YzUyLTQyNDYtOTVjOC0wYzFhOWMzYzMxYTAnIHRhcmdldD0nX3NlbGYnPkzhu4tjaCBwaOG7pWMgduG7pTwvYT48L2xpPjxsaSBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nL01hcEdyb3VwLmFzcHgnIHRhcmdldD0nX3NlbGYnPkLhuqNuIMSR4buTPC9hPjwvbGk+PGxpIGNsYXNzPSdoYXMtc3ViJz48YSBocmVmPScvSW5zdHJ1Y3Rpb24uYXNweD9JZD04MzFhZTQ3OS1jNDRlLTRmYmQtODFmNi0zODU5ZmI0MGY5YTMnIHRhcmdldD0nX3NlbGYnPk7hu5lpIHF1eSB0aMawIHZp4buHbjwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9Jy9Db250YWN0LmFzcHgnIHRhcmdldD0nX3NlbGYnPjxzcGFuPkxpw6puIGjhu4c8L3NwYW4+PC9hPjwvbGk+ZAILD2QWAgIBD2QWAmYPZBYIAgoPEA8WBh4ORGF0YVZhbHVlRmllbGQFAklkHg1EYXRhVGV4dEZpZWxkBQpPY2N1cGF0aW9uHgtfIURhdGFCb3VuZGdkEBUfCULDoWMgc+G7uRFCacOqbiB04bqtcCB2acOqbgtC4buZIMSR4buZaRZDw6FuIGLhu5kgdmnDqm4gY2jhu6ljCEPDtG5nIGFuF0PDtG5nIE5naOG7hyBUaMO0bmcgVGluDcSQaeG7h24gbOG7sWMJRHUgbOG7i2NoDETGsOG7o2MgU+G7uQ1HaeG6o25nIHZpw6puC0dpw6FvIHZpw6puCkjhu41jIHNpbmgJSMawdSB0csOtCkvhur8gdG/DoW4MS2nhu4NtIHRvw6FuCktpbmggZG9hbmgSS+G7uSBUaHXhuq10IHZpw6puDUzDom0gbmdoaeG7h3ASTOG6rXAgdHLDrG5oIHZpw6puCkx14bqtdCBzxrALTeG6q3UgZ2nDoW8JTmjDoCBiw6FvC07hu5lpIHRy4bujDk7DtG5nIG5naGnhu4dwDVBoacOqbiBk4buLY2gKU2luaCB2acOqbgtUw6BpIGNow61uaAxUaGnhur90IGvhur8HVOG7sSBkbwlUxrAgcGjDoXAJVMawIHbhuqVuFR8CNzcCOTICOTYBMQIxMwI2MAI5MQIyMwI4NQI3MQI1NgI3MAI0OAI2NQI4MwIyNwI5NAIzNwI4MQI3NAI4OQI2OAI3OAI0MQI1MQI1MAIxMQI3MgI2NwIxMAIxORQrAx9nZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZGQCDA8QDxYGHwIFAklkHwMFDkVkdWNhdGlvbkxldmVsHwRnZBAVDAsxMCB0csOqbiAxMAsxMiB0csOqbiAxMgtDYW8gxJHhurNuZwzEkOG6oWkgaOG7jWMJR2nDoW8gc8awCU3huqdtIG5vbgpUaOG6oWMgc8SpClRp4bq/biBzxKkMVGnhu4N1IGjhu41jC1RydW5nIGPhuqVwFFRydW5nIGjhu41jIGPGoSBz4bufGFRydW5nIGjhu41jIHBo4buVIHRow7RuZxUMAjMwAjMxATEBNgE3AjIzATUBNAEyAjI1ATMCMTEUKwMMZ2dnZ2dnZ2dnZ2dnZGQCEg8QDxYGHwIFAklkHwMFBE5hbWUfBGdkEBXxAQtBZmdoYW5pc3Rhbg1BbGFuZCBJc2xhbmRzB0FsYmFuaWEHQWxnZXJpYQ5BbWVyaWNhbiBTYW1vYQdBbmRvcnJhBkFuZ29sYQhBbmd1aWxsYQpBbnRhcmN0aWNhE0FudGlndWEgQW5kIEJhcmJ1ZGEJQXJnZW50aW5hB0FybWVuaWEFQXJ1YmEJQXVzdHJhbGlhB0F1c3RyaWEKQXplcmJhaWphbgdCYWhhbWFzB0JhaHJhaW4KQmFuZ2xhZGVzaAhCYXJiYWRvcwdCZWxhcnVzB0JlbGdpdW0GQmVsaXplBUJlbmluB0Jlcm11ZGEGQmh1dGFuB0JvbGl2aWEWQm9zbmlhIGFuZCBIZXJ6ZWdvdmluYQhCb3Rzd2FuYQ1Cb3V2ZXQgSXNsYW5kBkJyYXppbB5Ccml0aXNoIEluZGlhbiBPY2VhbiBUZXJyaXRvcnkRQnJ1bmVpIERhcnVzc2FsYW0IQnVsZ2FyaWEMQnVya2luYSBGYXNvB0J1cnVuZGkIQ2FtYm9kaWEIQ2FtZXJvb24GQ2FuYWRhCkNhcGUgVmVyZGUOQ2F5bWFuIElzbGFuZHMYQ2VudHJhbCBBZnJpY2FuIFJlcHVibGljBENoYWQFQ2hpbGUFQ2hpbmEQQ2hyaXN0bWFzIElzbGFuZBdDb2NvcyAoS2VlbGluZykgSXNsYW5kcwhDb2xvbWJpYQdDb21vcm9zBUNvbmdvJUNvbmdvLCBUaGUgRGVtb2NyYXRpYyBSZXB1YmxpYyBvZiB0aGUMQ29vayBJc2xhbmRzCkNvc3RhIFJpY2EHQ3JvYXRpYQRDdWJhBkN5cHJ1cw5DemVjaCBSZXB1YmxpYwdEZW5tYXJrCERqaWJvdXRpCERvbWluaWNhEkRvbWluaWNhbiBSZXB1YmxpYwdFY3VhZG9yBUVneXB0C0VsIFNhbHZhZG9yEUVxdWF0b3JpYWwgR3VpbmVhB0VyaXRyZWEHRXN0b25pYQhFdGhpb3BpYRtGYWxrbGFuZCBJc2xhbmRzIChNYWx2aW5hcykNRmFyb2UgSXNsYW5kcwRGaWppB0ZpbmxhbmQGRnJhbmNlDUZyZW5jaCBHdWlhbmEQRnJlbmNoIFBvbHluZXNpYRtGcmVuY2ggU291dGhlcm4gVGVycml0b3JpZXMFR2Fib24GR2FtYmlhB0dlb3JnaWEHR2VybWFueQVHaGFuYQlHaWJyYWx0YXIGR3JlZWNlCUdyZWVubGFuZAdHcmVuYWRhCkd1YWRlbG91cGUER3VhbQlHdWF0ZW1hbGEIR3Vlcm5zZXkGR3VpbmVhDUd1aW5lYS1CaXNzYXUGR3V5YW5hBUhhaXRpIUhlYXJkIElzbGFuZCBhbmQgbWNkb25hbGQgSXNsYW5kcx1Ib2x5IHNlZSAodmF0aWNhbiBjaXR5IHN0YXRlKQhIb25kdXJhcwlIb25nIEtvbmcHSHVuZ2FyeQdJY2VsYW5kBUluZGlhCUluZG9uZXNpYRlJcmFuLCBJc2xhbWljIFJlcHVibGljIE9mBElyYXEHSXJlbGFuZAtJc2xlIG9mIE1hbgZJc3JhZWwFSXRhbHkHSmFtYWljYQVKYXBhbgZKZXJzZXkGSm9yZGFuCkthemFraHN0YW4FS2VueWEmS2VyZWEsIGRlbW9jcmF0aWMgcGVvcGxlInMgUmVwdWJsaWMgT2YIS2lyaWJhdGkSS29yZWEsIFJlcHVibGljIE9mBkt1d2FpdApLeXJneXpzdGFuIExhbyBQZW9wbGUicyBEZW1vY3JhdGljIFJlcHVibGljBkxhdHZpYQdMZWJhbm9uB0xlc290aG8HTGliZXJpYRZMaWJ5YW4gYXJhYiBqYW1haGlyaXlhDUxpZWNodGVuc3RlaW4JTGl0aHVhbmlhCkx1eGVtYm91cmcFTWFjYW8rTWFjZWRvbmlhLCB0aGUgZm9yIG1lciB5dWdvc2xhdiBSZXB1YmxpYyBvZgpNYWRhZ2FzY2FyBk1hbGF3aQhNYWxheXNpYQhNYWxkaXZlcwRNYWxpBU1hbHRhEE1hcnNoYWxsIElzbGFuZHMKTWFydGluaXF1ZQpNYXVyaXRhbmlhCU1hdXJpdGl1cwdNYXlvdHRlBk1leGljbx9NaWNyb25lc2lhLCBGZWRlcmF0ZWQgU3RhdGVzIE9mFE1vbGRvdmEsIFJlcHVibGljIE9mBk1vbmFjbwhNb25nb2xpYQpNb250ZW5lZ3JvCk1vbnRzZXJyYXQHTW9yb2NjbwpNb3phbWJpcXVlB015YW5tYXIHTmFtaWJpYQVOYXVydQVOZXBhbAtOZXRoZXJsYW5kcxROZXRoZXJsYW5kcyBBbnRpbGxlcw1OZXcgQ2FsZWJvbmlhC05ldyBaZWFsYW5kCU5pY2FyYWd1YQVOaWdlcgdOaWdlcmlhBE5pdWUOTm9yZm9sayBJc2xhbmQYTm9ydGhlcm4gbWFyaWFuYSBJc2xhbmRzBk5vcndheQRPbWFuCFBha2lzdGFuBVBhbGF1H1BhbGVzdGluaWFuIFRlcnJpdG9yeSwgT2NjdXBpZWQGUGFuYW1hEFBhcHVhIE5ldyBHdWluZWEIUGFyYWd1YXkEUGVydQtQaGlsaXBwaW5lcwhQaXRjYWlybgZQb2xhbmQIUG9ydHVnYWwLUHVlcnRvIFJpY28FUWF0YXIHUm9tYW5pYRJSdXNzaWFuIEZlZGVyYXRpb24GUndhbmRhDFNhaW50IEhlbGVuYRVTYWludCBLaXR0cyBBbmQgTmV2aXMLU2FpbnQgTHVjaWEMU2FpbnQgTWFydGluGVNhaW50IFBpZXJyZSBBbmQgTWlxdWVsb24FU2Ftb2EKU2FuIE1hcmlubxVTYW8gdG9tZSBhbmQgcHJpbmNpcGUMU2F1ZGkgQXJhYmlhB1NlbmVnYWwGU2VyYmlhClNleWNoZWxsZXMMU2llcnJhIExlb25lCVNpbmdhcG9yZQhTbG92YWtpYQhTbG92ZW5pYQ9Tb2xvbW9uIElzbGFuZHMHU29tYWxpYQxTb3V0aCBBZnJpY2EsU291dGggR2VvcmdpYSBBbmQgVGhlIFNvdXRoIFNhbmR3aWNoIElzbGFuZHMFU3BhaW4JU3JpIExhbmthBVN1ZGFuCFN1cmluYW1lFlN2YWxiYXJkIEFuZCBKYW4gTWF5ZW4JU3dhemlsYW5kBlN3ZWRlbgtTd2l0emVybGFuZBRTeXJpYW4gQXJhYiBSZXB1YmxpYxlUYWl3YW4sIFByb3ZpbmNlIE9mIENoaW5hClRhamlraXN0YW4lVGFuemFuaWEsIFVuaXRlZCBSZXB1YmxpYyBPZiBUaGFpbGFuZAtUaW1vci1sZXN0ZQRUb2dvB1Rva2VsYXUFVG9uZ2ETVHJpbmlkYWQgQW5kIFRvYmFnbwdUdW5pc2lhBlR1cmtleQxUdXJrbWVuaXN0YW4YVHVya3MgQW5kIENhaWNvcyBJc2xhbmRzBlR1dmFsdQZVZ2FuZGEHVWtyYWluZRRVbml0ZWQgQXJhYiBFbWlyYXRlcw5Vbml0ZWQgS2luZ2RvbQ1Vbml0ZWQgU3RhdGVzJFVuaXRlZCBTdGF0ZXMgTWlub3IgT3V0bHlpbmcgSXNsYW5kcwdVcnVndWF5ClV6YmVraXN0YW4HVmFudWF0dQlWZW5lenVlbGEIVmlldCBOYW0XVmlyZ2luIElzbGFuZHMsIEJyaXRpc2gUVmlyZ2luIElzbGFuZHMsIFUuUy4RV2FsbGlzIEFuZCBGdXR1bmEOV2VzdGVybiBTYWhhcmEFWWVtZW4GWmFtYmlhCFppbWJhYndlFfEBATEBMgEzATQBNQE2ATcBOAE5AjEwAjExAjEyAjE0AjEzAjE1AjE2AjE3AjE4AjE5AjIwAjIxAjIyAjIzAjI0AjI1AjI2AjI3AjI4AjI5AjMwAjMxAjMyAjMzAjM0AjM1AjM2AjM3AjM4AjM5AjQwAjQxAjQyAjQzAjQ0AjQ1AjQ2AjQ3AjQ4AjQ5AjUwAjUxAjUyAjUzAjU0AjU1AjU2AjU3AjU4AjU5AjYwAjYxAjYyAjYzAjY0AjY1AjY2AjY3AjY4AjY5AjcwAjcxAjcyAjczAjc0Ajc1Ajc2Ajc3Ajc4Ajc5AjgwAjgxAjgyAjgzAjg0Ajg1Ajg2Ajg3Ajg4Ajg5AjkwAjkxAjkyAjkzAjk0Ajk1Ajk2Ajk3Ajk4Ajk5AzEwMAMxMDED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Z2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2RkAg0PZBYEAgEPFgIeB1Zpc2libGVnFgICAQ8WAh8ABdcDPGxpPjxhIGhyZWY9J2h0dHA6Ly90aHV2aWVuaGFub2kub3JnLnZuL0RlZmF1bHQuYXNweCcgdGFyZ2V0PSdfc2VsZic+VHJhbmcgY2jhu6c8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL3RodXZpZW5oYW5vaS5vcmcudm4vTmV3cy5hc3B4JyB0YXJnZXQ9J19zZWxmJz5UaW4gdOG7qWM8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL3RodXZpZW5oYW5vaS5vcmcudm4vUGFydG5lckdyb3VwLmFzcHgnIHRhcmdldD0nX3NlbGYnPk3huqFuZyBsxrDhu5tpIHRoxrAgdmnhu4duPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly90aHV2aWVuaGFub2kub3JnLnZuL1JlY3J1aXRtZW50R3JvdXAuYXNweCcgdGFyZ2V0PSdfc2VsZic+VHV54buDbiBk4bulbmc8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL3RodXZpZW5oYW5vaS5vcmcudm4vQ29udGFjdC5hc3B4JyB0YXJnZXQ9J19zZWxmJz5MacOqbiBo4buHPC9hPjwvbGk+ZAIDDxYCHwAF6gQ8ZGl2IGNsYXNzPSJsZWZ0Ij4KPHA+PHNwYW4gc3R5bGU9ImNvbG9yOiNmZmZmZmYiPjxzdHJvbmc+QuG6ok4gUVVZ4buATiBUSFXhu5hDIFbhu4A6IFRIxq8gVknhu4ZOIEjDgCBO4buYSTwvc3Ryb25nPjwvc3Bhbj48L3A+Cgo8cD48c3BhbiBzdHlsZT0iY29sb3I6I2ZmZmZmZiI+xJDhu4thIGNo4buJOiBT4buRIDQ3IELDoCBUcmnhu4d1LCBIb8OgbiBLaeG6v20sIEjDoCBO4buZaSwgVmnhu4d0IE5hbTwvc3Bhbj48L3A+Cgo8cD48c3BhbiBzdHlsZT0iY29sb3I6I2ZmZmZmZiI+V2Vic2l0ZTogPC9zcGFuPjxzcGFuIHN0eWxlPSJjb2xvcjojZWNmMGYxIj5odHRwOi8vd3d3LnRodXZpZW5oYW5vaS5vcmcudm48L3NwYW4+PC9wPgo8L2Rpdj4KCjxkaXYgY2xhc3M9InJpZ2h0Ij4KPHA+Jm5ic3A7PC9wPgoKPHA+PHNwYW4gc3R5bGU9ImNvbG9yOiNmZmZmZmYiPsSQaeG7h24gdGhv4bqhaTogKDAyNCkuMzgyNTQ4MTc7IEZheDogKDAyNCkuMzkzNjkxMDA7PC9zcGFuPjwvcD4KCjxwPjxzcGFuIHN0eWxlPSJjb2xvcjojZmZmZmZmIj5FbWFpbDogPC9zcGFuPjxzcGFuIHN0eWxlPSJjb2xvcjojZmZmZmZmIj50aHV2aWVuX3Nvdmh0dEBoYW5vaS5nb3Yudm48L3NwYW4+PC9wPgo8L2Rpdj5kGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYGBRVjdGwwMCR1Y0Jhbm5lcjEkaW1nVm4FFWN0bDAwJHVjQmFubmVyMSRpbWdFbgUXY3RsMDAkY3BoQ29udGVudCRyYWROYW0FFmN0bDAwJGNwaENvbnRlbnQkcmFkTnUFFmN0bDAwJGNwaENvbnRlbnQkcmFkTnUFHGN0bDAwJGNwaENvbnRlbnQkY2hrQ2hhcE5oYW5mEy1/NB+VCzl5SqngbJYfdtT/ApBeli8kspOzBjjpag==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=waxBHgc8XSWBtd9Zl4_LWjLmR-OwoAPIVAzSI23v6MaBI0oCzJ-c8xqkqJFd32_upitg5pECPqEDWzp9Xb0HOnzE5X-OUpGNN0908nBov_w1&amp;t=636577286940000000" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=5JX4s6AUslevy8QASPDj2EenaD310oH90IlbC3mUaHKJF-sl3fQxTu0LJWqJhvbI8XFVG2RC4YO98C9htzcQKdcXs-_KvIWiDUTuVTSdwVdZQlhhsjdX8JJHzBiNuw7J1ka23ACEHaKJOBLmg6lTBAJYs-8stwaeA9YweFD4BcI1&amp;t=ffffffffc85a378c" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=1PNiKhuI-fLT6bwRj4f3lpOxf6vzSvZiHoo36ulJkEnjqiUKXjdxHbljXPmAd1lEbhj-pX-H7S-R-zlS_3IU0ZFwnZLx7aUiWjJokzQ0U98Jjq3zw6hncC9fRQrS1d-8n7AFL8ltSedzR7ReezXIZI-qEbuFT-0w8j0lBz3tJO5ngp5yJMeEW9UplP0UuxUG0&amp;t=ffffffffcd368728" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=pQBor2cNGVHojHeZXbI_nI4277_BBTj-ij4omjUDJETGNhXKpK3jRW3aCB48LpLiLcERktv3tM2VUoPMg9C0yj-lKZWfLc8rUB8RdKxH77ulJUkQ9ZXkiQMVETUL5HRJrrK_MIGZ43mTTSUBiK6MRYpZQZjOvgRSLLSGSTe_echlhJSciZEgbK1VgD3dX6Q-0&amp;t=ffffffffcd368728" type="text/javascript"></script>
+<script src="/WebResource.axd?d=KNn0goJ8HvRmHoMG0xXuSxF43gKN2OjCMFCYkzr-GFtg_vjdzzsYQoJcGMTbqv7e5Wp6XkYXdsmeUZ9Z7Onm1m8YaNrxCv79Z52JFkvyj9Q1&amp;t=636577286940000000" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="AF9EB76E" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['tctl00$cphContent$upd','cphContent_upd'], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        <div class="wrapper" style="background: #F8F6FB;">
+            <div style="background: #FFF; min-width: 1000px; max-width: 1000px; -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.41); -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.41); box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.41); margin: 0 auto;">
+
 </head>
 <body>
         <li role="presentation"><a href="TrangChu">Trang chủ</a>
         </li>
-        <form method="post">
+        <!-- <form method="post">
                 <label>Mã khách hàng:</label><br>
                 <input name="ma"><br>
                 <label>Tên khách:</label><br>
@@ -29,6 +146,714 @@
             
             <h2>{{ i.ma }} : {{ i.name }}</h2>
             
-            {% endfor %} 
+            {% endfor %}  -->
+            <div class="container" style="padding-left: 10px; padding-right: 10px;">
+                    <div class="full-content">
+                        
+                        
+    <div class="breadcrumbHome">
+        <ul>
+            <li><a href="Default.aspx">Trang chủ</a></li>
+            <li>Đăng ký thẻ đọc</li>
+        </ul>
+    </div>
+
+
+                        <div class="bottom-content">
+                            <!-- left content -->
+                            <div class="left250">
+                            </div>
+
+                            <!-- right content-->
+                            <div class="right730">
+                                
+    <div class="right-home">
+        <div class="head-box"><a class="vanban" href="#">Đăng ký thẻ đọc</a></div>
+        <div class="right-listnew">
+            <div class="new3">
+                <div id="cphContent_upd">
+	
+                        <table border="0" cellspacing="0" cellpadding="0" width="100%" class="tblData">
+                            <tr>
+                                <td height="10px"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" align="center">
+                                    <b>NHẬP THÔNG TIN CÁ NHÂN ĐĂNG KÝ LÀM THẺ ĐỌC TẠI THƯ VIỆN</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="10px"></td>
+                            </tr>
+                            <tr>
+                                <td width="10%"></td>
+                                <td nowrap="nowrap"></td>
+                                <td width="80%"></td>
+                                <td width="10%"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap" valign="top" colspan="3"><b>Thông tin cá nhân:</b></td>
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap" valign="top">Họ tên:&nbsp;</td>
+                                <td>
+                                    <div class="input-group">
+                                        <input name="ctl00$cphContent$txtHoTen" type="text" maxlength="80" id="cphContent_txtHoTen" class="form-control" placeholder="Họ tên" />
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-font"></i>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>&nbsp;<span class="lbError">*</span></td>
+                            </tr>
+                            <tr class="lbError">
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span id="cphContent_rfvHoTen" style="display:none;">Yêu cầu nhập Họ tên</span></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap">Giới tính:&nbsp;</td>
+                                <td>
+                                    <div class="radio icheck">
+                                        <span class="icheck"><input id="cphContent_radNam" type="radio" name="ctl00$cphContent$radGioiTinh" value="radNam" checked="checked" /></span>&nbsp;Nam&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="icheck"><input id="cphContent_radNu" type="radio" name="ctl00$cphContent$radGioiTinh" value="radNu" /></span>&nbsp;Nữ
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap">Ngày sinh:&nbsp;</td>
+                                <td>
+
+                                    <div class="input-group">
+                                        <input name="ctl00$cphContent$txtNgaySinh" type="text" maxlength="10" id="cphContent_txtNgaySinh" class="datepicker form-control pull-right" placeholder="Ngày sinh" data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;" data-mask="" />
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                            </tr>
+                            <tr class="lbError">
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span id="cphContent_RequiredFieldValidator2" style="display:none;">Yêu cầu nhập Ngày sinh</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap">Số CMTND:&nbsp;</td>
+                                <td>
+                                    <div class="input-group ">
+                                        <input name="ctl00$cphContent$txtSoCMTND" type="text" maxlength="20" id="cphContent_txtSoCMTND" class="form-control" placeholder="Số CMTND" style="width:100%;" />
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-font"></i>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr class="lbError">
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span id="cphContent_RequiredFieldValidator3" style="display:none;">Số CMTND chỉ được phép nhập số.</span></td>
+                                <td></td>
+                            </tr>
+                            <tr class="lbError">
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span id="cphContent_RequiredFieldValidator4" style="display:none;">Yêu cầu nhập Số CMTND</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap">Nghề nghiệp:&nbsp;</td>
+                                <td>
+                                    <select name="ctl00$cphContent$ddlNgheNghiep" id="cphContent_ddlNgheNghiep" class="selectpicker show-tick form-control" data-live-search="true" style="width: 100%;">
+		<option value="77">B&#225;c sỹ</option>
+		<option value="92">Bi&#234;n tập vi&#234;n</option>
+		<option value="96">Bộ đội</option>
+		<option value="1">C&#225;n bộ vi&#234;n chức</option>
+		<option value="13">C&#244;ng an</option>
+		<option value="60">C&#244;ng Nghệ Th&#244;ng Tin</option>
+		<option value="91">Điện lực</option>
+		<option value="23">Du lịch</option>
+		<option value="85">Dược Sỹ</option>
+		<option value="71">Giảng vi&#234;n</option>
+		<option value="56">Gi&#225;o vi&#234;n</option>
+		<option value="70">Học sinh</option>
+		<option value="48">Hưu tr&#237;</option>
+		<option value="65">Kế to&#225;n</option>
+		<option value="83">Kiểm to&#225;n</option>
+		<option value="27">Kinh doanh</option>
+		<option value="94">Kỹ Thuật vi&#234;n</option>
+		<option value="37">L&#226;m nghiệp</option>
+		<option value="81">Lập tr&#236;nh vi&#234;n</option>
+		<option value="74">Luật sư</option>
+		<option value="89">Mẫu gi&#225;o</option>
+		<option value="68">Nh&#224; b&#225;o</option>
+		<option value="78">Nội trợ</option>
+		<option value="41">N&#244;ng nghiệp</option>
+		<option value="51">Phi&#234;n dịch</option>
+		<option value="50">Sinh vi&#234;n</option>
+		<option value="11">T&#224;i ch&#237;nh</option>
+		<option value="72">Thiết kế</option>
+		<option value="67">Tự do</option>
+		<option value="10">Tư ph&#225;p</option>
+		<option value="19">Tư vấn</option>
+
+	</select>
+                                </td>
+                                <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                            </tr>
+                            <tr class="lbError">
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span id="cphContent_RequiredFieldValidator5" style="display:none;">Yêu cầu chọn Nghề nghiệp</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap">Trình độ:&nbsp;</td>
+                                <td>
+                                    <select name="ctl00$cphContent$ddlTrinhDo" id="cphContent_ddlTrinhDo" class="selectpicker show-tick form-control" data-live-search="true" style="width: 100%;">
+		<option value="30">10 tr&#234;n 10</option>
+		<option value="31">12 tr&#234;n 12</option>
+		<option value="1">Cao đẳng</option>
+		<option value="6">Đại học</option>
+		<option value="7">Gi&#225;o sư</option>
+		<option value="23">Mầm non</option>
+		<option value="5">Thạc sĩ</option>
+		<option value="4">Tiến sĩ</option>
+		<option value="2">Tiểu học</option>
+		<option value="25">Trung cấp</option>
+		<option value="3">Trung học cơ sở</option>
+		<option value="11">Trung học phổ th&#244;ng</option>
+
+	</select></td>
+                                <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                            </tr>
+                            <tr class="lbError">
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span id="cphContent_RequiredFieldValidator6" style="display:none;">Yêu cầu chọn Trình độ</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap">Nơi công tác:&nbsp;</td>
+                                <td>
+                                    <div class="input-group">
+                                        <textarea name="ctl00$cphContent$txtNoiCongTac" rows="3" cols="20" id="cphContent_txtNoiCongTac" class="form-control" onKeyUp="javascript:CheckMaxLength(this, 150);" placeholder="Nơi công tác" style="width:100%;">
+</textarea>
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-font"></i>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                            </tr>
+                            <tr class="lbError">
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span id="cphContent_RequiredFieldValidator7" style="display:none;">Yêu cầu nhập Nơi công tác</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap" valign="top" colspan="3"><b>Thông tin liên hệ:</b></td>
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap">Điện thoại:&nbsp;</td>
+                                <td>
+                                    <div class="input-group">
+                                        <input name="ctl00$cphContent$txtDienThoai" type="text" maxlength="12" id="cphContent_txtDienThoai" class="form-control" placeholder="Điện thoại" style="width:100%;" />
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-font"></i>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                            </tr>
+                            <tr class="lbError">
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span id="cphContent_RequiredFieldValidator8" style="display:none;">Yêu cầu nhập Điện thoại</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap">Quốc tịch:&nbsp;</td>
+                                <td>
+                                    <select name="ctl00$cphContent$ddlQuocTich" id="cphContent_ddlQuocTich" class="selectpicker show-tick form-control" data-live-search="true" style="width: 100%;">
+		<option value="1">Afghanistan</option>
+		<option value="2">Aland Islands</option>
+		<option value="3">Albania</option>
+		<option value="4">Algeria</option>
+		<option value="5">American Samoa</option>
+		<option value="6">Andorra</option>
+		<option value="7">Angola</option>
+		<option value="8">Anguilla</option>
+		<option value="9">Antarctica</option>
+		<option value="10">Antigua And Barbuda</option>
+		<option value="11">Argentina</option>
+		<option value="12">Armenia</option>
+		<option value="14">Aruba</option>
+		<option value="13">Australia</option>
+		<option value="15">Austria</option>
+		<option value="16">Azerbaijan</option>
+		<option value="17">Bahamas</option>
+		<option value="18">Bahrain</option>
+		<option value="19">Bangladesh</option>
+		<option value="20">Barbados</option>
+		<option value="21">Belarus</option>
+		<option value="22">Belgium</option>
+		<option value="23">Belize</option>
+		<option value="24">Benin</option>
+		<option value="25">Bermuda</option>
+		<option value="26">Bhutan</option>
+		<option value="27">Bolivia</option>
+		<option value="28">Bosnia and Herzegovina</option>
+		<option value="29">Botswana</option>
+		<option value="30">Bouvet Island</option>
+		<option value="31">Brazil</option>
+		<option value="32">British Indian Ocean Territory</option>
+		<option value="33">Brunei Darussalam</option>
+		<option value="34">Bulgaria</option>
+		<option value="35">Burkina Faso</option>
+		<option value="36">Burundi</option>
+		<option value="37">Cambodia</option>
+		<option value="38">Cameroon</option>
+		<option value="39">Canada</option>
+		<option value="40">Cape Verde</option>
+		<option value="41">Cayman Islands</option>
+		<option value="42">Central African Republic</option>
+		<option value="43">Chad</option>
+		<option value="44">Chile</option>
+		<option value="45">China</option>
+		<option value="46">Christmas Island</option>
+		<option value="47">Cocos (Keeling) Islands</option>
+		<option value="48">Colombia</option>
+		<option value="49">Comoros</option>
+		<option value="50">Congo</option>
+		<option value="51">Congo, The Democratic Republic of the</option>
+		<option value="52">Cook Islands</option>
+		<option value="53">Costa Rica</option>
+		<option value="54">Croatia</option>
+		<option value="55">Cuba</option>
+		<option value="56">Cyprus</option>
+		<option value="57">Czech Republic</option>
+		<option value="58">Denmark</option>
+		<option value="59">Djibouti</option>
+		<option value="60">Dominica</option>
+		<option value="61">Dominican Republic</option>
+		<option value="62">Ecuador</option>
+		<option value="63">Egypt</option>
+		<option value="64">El Salvador</option>
+		<option value="65">Equatorial Guinea</option>
+		<option value="66">Eritrea</option>
+		<option value="67">Estonia</option>
+		<option value="68">Ethiopia</option>
+		<option value="69">Falkland Islands (Malvinas)</option>
+		<option value="70">Faroe Islands</option>
+		<option value="71">Fiji</option>
+		<option value="72">Finland</option>
+		<option value="73">France</option>
+		<option value="74">French Guiana</option>
+		<option value="75">French Polynesia</option>
+		<option value="76">French Southern Territories</option>
+		<option value="77">Gabon</option>
+		<option value="78">Gambia</option>
+		<option value="79">Georgia</option>
+		<option value="80">Germany</option>
+		<option value="81">Ghana</option>
+		<option value="82">Gibraltar</option>
+		<option value="83">Greece</option>
+		<option value="84">Greenland</option>
+		<option value="85">Grenada</option>
+		<option value="86">Guadeloupe</option>
+		<option value="87">Guam</option>
+		<option value="88">Guatemala</option>
+		<option value="89">Guernsey</option>
+		<option value="90">Guinea</option>
+		<option value="91">Guinea-Bissau</option>
+		<option value="92">Guyana</option>
+		<option value="93">Haiti</option>
+		<option value="94">Heard Island and mcdonald Islands</option>
+		<option value="95">Holy see (vatican city state)</option>
+		<option value="96">Honduras</option>
+		<option value="97">Hong Kong</option>
+		<option value="98">Hungary</option>
+		<option value="99">Iceland</option>
+		<option value="100">India</option>
+		<option value="101">Indonesia</option>
+		<option value="102">Iran, Islamic Republic Of</option>
+		<option value="103">Iraq</option>
+		<option value="104">Ireland</option>
+		<option value="105">Isle of Man</option>
+		<option value="106">Israel</option>
+		<option value="107">Italy</option>
+		<option value="108">Jamaica</option>
+		<option value="109">Japan</option>
+		<option value="110">Jersey</option>
+		<option value="111">Jordan</option>
+		<option value="112">Kazakhstan</option>
+		<option value="113">Kenya</option>
+		<option value="115">Kerea, democratic people&quot;s Republic Of</option>
+		<option value="114">Kiribati</option>
+		<option value="116">Korea, Republic Of</option>
+		<option value="117">Kuwait</option>
+		<option value="118">Kyrgyzstan</option>
+		<option value="119">Lao People&quot;s Democratic Republic</option>
+		<option value="120">Latvia</option>
+		<option value="121">Lebanon</option>
+		<option value="122">Lesotho</option>
+		<option value="123">Liberia</option>
+		<option value="124">Libyan arab jamahiriya</option>
+		<option value="125">Liechtenstein</option>
+		<option value="126">Lithuania</option>
+		<option value="127">Luxembourg</option>
+		<option value="128">Macao</option>
+		<option value="129">Macedonia, the for mer yugoslav Republic of</option>
+		<option value="130">Madagascar</option>
+		<option value="131">Malawi</option>
+		<option value="132">Malaysia</option>
+		<option value="133">Maldives</option>
+		<option value="134">Mali</option>
+		<option value="135">Malta</option>
+		<option value="136">Marshall Islands</option>
+		<option value="137">Martinique</option>
+		<option value="138">Mauritania</option>
+		<option value="139">Mauritius</option>
+		<option value="140">Mayotte</option>
+		<option value="141">Mexico</option>
+		<option value="142">Micronesia, Federated States Of</option>
+		<option value="143">Moldova, Republic Of</option>
+		<option value="144">Monaco</option>
+		<option value="145">Mongolia</option>
+		<option value="146">Montenegro</option>
+		<option value="147">Montserrat</option>
+		<option value="148">Morocco</option>
+		<option value="149">Mozambique</option>
+		<option value="150">Myanmar</option>
+		<option value="151">Namibia</option>
+		<option value="152">Nauru</option>
+		<option value="153">Nepal</option>
+		<option value="154">Netherlands</option>
+		<option value="155">Netherlands Antilles</option>
+		<option value="156">New Calebonia</option>
+		<option value="157">New Zealand</option>
+		<option value="158">Nicaragua</option>
+		<option value="159">Niger</option>
+		<option value="160">Nigeria</option>
+		<option value="161">Niue</option>
+		<option value="162">Norfolk Island</option>
+		<option value="163">Northern mariana Islands</option>
+		<option value="164">Norway</option>
+		<option value="165">Oman</option>
+		<option value="166">Pakistan</option>
+		<option value="167">Palau</option>
+		<option value="168">Palestinian Territory, Occupied</option>
+		<option value="169">Panama</option>
+		<option value="170">Papua New Guinea</option>
+		<option value="171">Paraguay</option>
+		<option value="172">Peru</option>
+		<option value="173">Philippines</option>
+		<option value="174">Pitcairn</option>
+		<option value="175">Poland</option>
+		<option value="176">Portugal</option>
+		<option value="177">Puerto Rico</option>
+		<option value="178">Qatar</option>
+		<option value="179">Romania</option>
+		<option value="180">Russian Federation</option>
+		<option value="181">Rwanda</option>
+		<option value="182">Saint Helena</option>
+		<option value="183">Saint Kitts And Nevis</option>
+		<option value="184">Saint Lucia</option>
+		<option value="185">Saint Martin</option>
+		<option value="186">Saint Pierre And Miquelon</option>
+		<option value="187">Samoa</option>
+		<option value="188">San Marino</option>
+		<option value="189">Sao tome and principe</option>
+		<option value="190">Saudi Arabia</option>
+		<option value="191">Senegal</option>
+		<option value="192">Serbia</option>
+		<option value="193">Seychelles</option>
+		<option value="194">Sierra Leone</option>
+		<option value="195">Singapore</option>
+		<option value="196">Slovakia</option>
+		<option value="197">Slovenia</option>
+		<option value="198">Solomon Islands</option>
+		<option value="199">Somalia</option>
+		<option value="200">South Africa</option>
+		<option value="201">South Georgia And The South Sandwich Islands</option>
+		<option value="202">Spain</option>
+		<option value="203">Sri Lanka</option>
+		<option value="204">Sudan</option>
+		<option value="205">Suriname</option>
+		<option value="206">Svalbard And Jan Mayen</option>
+		<option value="207">Swaziland</option>
+		<option value="208">Sweden</option>
+		<option value="209">Switzerland</option>
+		<option value="210">Syrian Arab Republic</option>
+		<option value="211">Taiwan, Province Of China</option>
+		<option value="212">Tajikistan</option>
+		<option value="213">Tanzania, United Republic Of Thailand</option>
+		<option value="214">Timor-leste</option>
+		<option value="215">Togo</option>
+		<option value="216">Tokelau</option>
+		<option value="217">Tonga</option>
+		<option value="218">Trinidad And Tobago</option>
+		<option value="219">Tunisia</option>
+		<option value="220">Turkey</option>
+		<option value="221">Turkmenistan</option>
+		<option value="222">Turks And Caicos Islands</option>
+		<option value="223">Tuvalu</option>
+		<option value="224">Uganda</option>
+		<option value="225">Ukraine</option>
+		<option value="226">United Arab Emirates</option>
+		<option value="227">United Kingdom</option>
+		<option value="228">United States</option>
+		<option value="229">United States Minor Outlying Islands</option>
+		<option value="230">Uruguay</option>
+		<option value="231">Uzbekistan</option>
+		<option value="232">Vanuatu</option>
+		<option value="233">Venezuela</option>
+		<option selected="selected" value="234">Viet Nam</option>
+		<option value="235">Virgin Islands, British</option>
+		<option value="236">Virgin Islands, U.S.</option>
+		<option value="237">Wallis And Futuna</option>
+		<option value="238">Western Sahara</option>
+		<option value="239">Yemen</option>
+		<option value="240">Zambia</option>
+		<option value="241">Zimbabwe</option>
+
+	</select>
+                                </td>
+                                <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                            </tr>
+                            <tr class="lbError">
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span id="cphContent_RequiredFieldValidator9" style="display:none;">Yêu cầu chọn Quốc tịch</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap">Tỉnh thành:&nbsp;</td>
+                                <td>
+                                    <select name="ctl00$cphContent$ddlTinhThanh" id="cphContent_ddlTinhThanh" class="selectpicker show-tick form-control" data-live-search="true" style="width: 100%;">
+		<option value="3">An Giang</option>
+		<option value="4">B&#224; Rịa - Vũng T&#224;u</option>
+		<option value="5">Bắc Cạn</option>
+		<option value="6">Bắc Giang</option>
+		<option value="7">Bạc Li&#234;u</option>
+		<option value="8">Bắc Ninh</option>
+		<option value="9">Bến Tre</option>
+		<option value="10">B&#236;nh Định</option>
+		<option value="11">B&#236;nh Dương</option>
+		<option value="12">B&#236;nh Phước</option>
+		<option value="13">B&#236;nh Thuận</option>
+		<option value="14">C&#224; Mau</option>
+		<option value="15">Cần Thơ</option>
+		<option value="16">Cao Bằng</option>
+		<option value="17">Đ&#224; Nẵng</option>
+		<option value="18">Đắc Lắc</option>
+		<option value="19">Đắk N&#244;ng</option>
+		<option value="20">Điện Bi&#234;n</option>
+		<option value="21">Đồng Nai</option>
+		<option value="22">Đồng Th&#225;p</option>
+		<option value="23">Gia Lai</option>
+		<option value="24">H&#224; Giang</option>
+		<option value="25">H&#224; Nam</option>
+		<option value="1">H&#224; Nội</option>
+		<option value="26">H&#224; Tĩnh</option>
+		<option value="27">Hải Dương</option>
+		<option value="2">Hải Ph&#242;ng</option>
+		<option value="28">Hậu Giang</option>
+		<option value="29">H&#242;a B&#236;nh</option>
+		<option value="30">Hưng Y&#234;n</option>
+		<option value="31">Kh&#225;nh H&#242;a</option>
+		<option value="32">Ki&#234;n Giang</option>
+		<option value="33">Kon Tum</option>
+		<option value="34">Lai Ch&#226;u</option>
+		<option value="35">L&#226;m Đồng</option>
+		<option value="36">Lạng Sơn</option>
+		<option value="37">L&#224;o Cai</option>
+		<option value="38">Long An</option>
+		<option value="39">Nam Định</option>
+		<option value="40">Nghệ An</option>
+		<option value="41">Ninh B&#236;nh</option>
+		<option value="42">Ninh Thuận</option>
+		<option value="43">Ph&#250; Thọ</option>
+		<option value="44">Ph&#250; Y&#234;n</option>
+		<option value="45">Quảng B&#236;nh</option>
+		<option value="46">Quảng Nam</option>
+		<option value="47">Quảng Ng&#227;i</option>
+		<option value="48">Quảng Ninh</option>
+		<option value="49">Quảng Trị</option>
+		<option value="50">S&#243;c Trăng</option>
+		<option value="51">Sơn La</option>
+		<option value="52">T&#226;y Ninh</option>
+		<option value="53">Th&#225;i B&#236;nh</option>
+		<option value="54">Th&#225;i Nguy&#234;n</option>
+		<option value="55">Thanh Ho&#225;</option>
+		<option value="56">Thừa Thi&#234;n - Huế</option>
+		<option value="57">Tiền Giang</option>
+		<option value="58">TP Hồ Ch&#237; Minh</option>
+		<option value="59">Tr&#224; Vinh</option>
+		<option value="60">Tuy&#234;n Quang</option>
+		<option value="61">Vĩnh Long</option>
+		<option value="62">Vĩnh Ph&#250;c</option>
+		<option value="63">Y&#234;n B&#225;i</option>
+
+	</select></td>
+                                <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                            </tr>
+                            <tr class="lbError">
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span id="cphContent_rfvTinhThanh" style="display:none;">Yêu cầu chọn Tỉnh thành</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap">Địa chỉ liên hệ:&nbsp;</td>
+                                <td>
+                                    <div class="input-group">
+                                        <textarea name="ctl00$cphContent$txtDiaChi" rows="3" cols="20" id="cphContent_txtDiaChi" class="form-control" placeholder="Địa chỉ liên hệ" onKeyUp="javascript:CheckMaxLength(this, 200);" style="width:100%;">
+</textarea>
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-font"></i>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                            </tr>
+                            <tr class="lbError">
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span id="cphContent_RequiredFieldValidator11" style="display:none;">Yêu cầu nhập Địa chỉ liên hệ</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap">Thời hạn thẻ:&nbsp;</td>
+                                <td>
+                                    <div class="radio icheck">
+                                        <table id="cphContent_radThoiHanThe" class="radThoiHanThe">
+		<tr>
+			<td><input id="cphContent_radThoiHanThe_0" type="radio" name="ctl00$cphContent$radThoiHanThe" value="0" checked="checked" /><label for="cphContent_radThoiHanThe_0">Theo năm   </label></td><td><input id="cphContent_radThoiHanThe_1" type="radio" name="ctl00$cphContent$radThoiHanThe" value="1" /><label for="cphContent_radThoiHanThe_1"> Theo quý</label></td>
+		</tr>
+	</table>
+                                    </div>
+                                </td>
+
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap"></td>
+                            
+                            </tr>
+                            <tr>
+                                <td height="5px"></td>
+                            </tr>
+                            <tr style="line-height: 15px;">
+                                <td></td>
+                                <td nowrap="nowrap"></td>
+                                <td>
+                                    <span style="color: red; font-size: 11px;">(*) Yêu cầu nhập thông tin</span>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap"></td>
+                                
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td nowrap="nowrap"></td>
+                                <td nowrap="nowrap">
+                                    <input type="submit" name="ctl00$cphContent$btnDangKy" value="Đăng ký" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cphContent$btnDangKy&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="cphContent_btnDangKy" class="btn btn-primary btn-flat" style="margin-left: 0px" />
+                                    <input name="ctl00$cphContent$btnLamLai" type="reset" id="cphContent_btnLamLai" value="Đặt lại" class="btn btn-primary btn-flat" style="width: 80px;" />
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    
+</div>
+
 </body>
 </html>
