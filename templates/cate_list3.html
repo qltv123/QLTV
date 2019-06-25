@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename='components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="{{ url_for('static', filename='components/metisMenu/dist/metisMenu.min.css') }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='assets/css/sb-admin.css') }}" rel="stylesheet">
+    <!-- Custom Fonts -->
+
+    <link href="{{ url_for('static', filename='components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- DataTables CSS -->
+    <link href="{{ url_for('static', filename='components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+
+    <link href="{{ url_for('static', filename='components/datatables-responsive/css/dataTables.responsive.css') }}" rel="stylesheet">
+    <!-- <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"> -->
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Library Management</a>
+            </div>
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-nav">
+                <!-- <li class="active"><a href="#">Home</a></li> -->
+                <li><a href="#">About</a></li>
+                <li><a href="#">contact</a></li>
+                <!-- <li><a href="#">Page 3</a></li> -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Welcome</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+            <!-- /.navbar-top-links -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
+                        </li>
+                        <li>
+                            <a href="NQ"><i class="fa fa-book fa-fw"></i>Nội quy thư viện<span class="fa arrow"></span></a>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="QD"><i class="fa fa-cube fa-fw"></i>Quy định làm thẻ<span class="fa arrow"></span></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="/AddBook"><i class="fa fa-archive fa-fw"></i> Quản lý sách<span class="fa arrow"></span></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li> 
+                        <li>
+                            <a href="/AddCardUser"><i class="fa fa-tags"></i> Quản lý bạn đọc<span class="fa arrow"></span></a>
+                           
+                            <!-- /.nav-second-level -->
+                        </li> 
+                        
+                            <!-- /.nav-second-level -->
+                        </li>
+                        
+                            <!-- /.nav-second-level -->
+                        
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                   <ol class="breadcrumb">
+                       <li>
+                           <a href="TrangChu">Home</a>
+                       </li>
+                       <li>
+                           <a href="#">Imformation</a>
+                       </li>
+                   </ol>
+                   <!-- <div class="button">
+                       <a href="" class="btn btn-primary"><i class="fa fa-plus"></i>ADD</a> -->
+                       
+                       <div class="col-sm-9">
+                            <div class="articleDetails"> 
+         <span class="glyphicon glyphicon-time"> </span>  <span class="date"> Ngày đăng: 01/01/2017</span> 
+            <h4 class="articleTitle">TTTT THƯ VIỆN TMU</h4> 
+        
+        
+        <p style="text-align:center"><span style="font-size:16px"><em><strong><span style="color:#0000FF">&nbsp;</span><span style="color:#800000">LỊCH SỬ THÀNH LẬP &amp; PHÁT TRIỂN</span></strong></em></span></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">Thư viện được thành lập năm 1960 cùng với sự thành lập Trường Thương nghiệp Trung ương. Những năm đầu thành lập, mặc dù còn nhiều khó khăn thiếu thốn, nhưng Trường đã thành lập khá đầy đủ các Phòng, Ban chức năng, Phòng Giáo vụ (bao gồm bộ phận thư viện và phiên dịch)…</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">Năm 1965, Trường được giao nhiệm vụ đào tạo hệ đại học, Nhà trường tiếp tục đầu tư nâng cấp về cơ sở vật chất, tăng cường mua sách cho Thư viện.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">Năm 1971, bộ phận thư viện và bộ phận đánh máy, in tài liệu hợp thành một đơn vị là Phòng Thư ấn trực thuộc Ban Giám hiệu.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">Năm 1974, Thư viện được tách ra và trở thành một đơn vị độc lập.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">Năm 2001, Nhà trường quyết định cải tạo khu nhà ăn thành trụ sở thư viện với tổng diện tích 2.600m2. Thư viện được thiết kế thêm nhiều phòng chức năng phù hợp với một thư viện hiện đại.&nbsp;</span></span></strong><strong><span style="font-size:16px"><span style="color:#0000FF">Năm 2002, Thư viện được đầu tư nâng cấp thành một thư viện điện tử với nhiều trang thiết bị kỹ thuật hiện đại, công nghệ tiên tiến. Đây là bước đột phá trong quá trình hình thành và phát triển của Thư viện từ thư viện truyền thống lên thư viện điện tử đáp ứng yêu cầu nâng cao chất lượng đào tạo, nghiên cứu khoa học và hội nhập quốc tế.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">Ngày 29/9/2005, Thư viện được đổi tên thành Trung tâm Thông tin Thư viện theo QĐ số 756/TM-TCHC của Hiệu trưởng.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">Quá trình tin học hoá: Bắt đầu từ năm 1998 từ việc áp dụng phần mềm Hệ thống lưu trữ và tìm kiếm thông tin CDS/ISIS for Dos và CDS/ISIS &nbsp;for Windows. Năm 2002 được trang bị phần mềm Hệ Quản trị thư viện tích hợp - Ilib 3.6 do Tập đoàn công nghệ CMC chuyển giao. Toàn bộ quá trình hoạt động của thư viện được tin học hóa hoàn toàn.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">Năm 2012 nâng cấp phần mềm Ilib 3.6 lên phiên bản Ilib 6.0. Năm 2017, TTTT Thư viện tiếp tục triển khai áp dụng Phần mềm quản trị thư viện số - Digital Ilib nhằm quản lý và phục vụ bạn đọc khai thác sử dụng tài liệu điện tử, tài liệu số.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">Trải qua hơn một nửa thế kỷ xây dựng và phát triển, từ một tổ nghiệp vụ chuyên môn trực thuộc, đến nay Thư viện đã phát triển và trở thành Trung tâm Thông tin - Thư viện hiện đại với trang thiết&nbsp; bị tiên tiến, nguồn lực thông tin phong phú, đa dạng, đáp ứng yêu cầu đổi mới, nâng cao chất lượng giảng dạy và học tập, nghiên cứu khoa học, góp phần nâng cao vị thế của Trường Đại học Thương mại.</span></span></strong></p>
+        
+        <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">LÃNH ĐẠO THƯ VIỆN QUA CÁC THỜI KỲ</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">1- </span></span></strong><strong><span style="font-size:16px"><span style="color:#0000FF">GIÁM ĐỐC</span></span></strong></p>
+        
+        <table border="1" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td style="width:54px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">TT</span></span></strong></p>
+                    </td>
+                    <td style="width:321px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">Họ và tên</span></span></strong></p>
+                    </td>
+                    <td style="width:243px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">Thời kỳ</span></span></strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:54px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">1</span></span></strong></p>
+                    </td>
+                    <td style="width:321px">
+                    <p style="text-align:center"><img alt="" src="/Upload/news/IMG20181203084043.jpg" style="border-style:solid; border-width:1px; height:123px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">Ông Trần Ngọc Ánh</span></span></strong></p>
+                    </td>
+                    <td style="width:243px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">1960-197?</span></span></strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:54px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">2</span></span></strong></p>
+                    </td>
+                    <td style="width:321px">
+                    <p style="text-align:center"><img alt="" src="/Upload/news/ta%20duc%20dich.jpg" style="border-style:solid; border-width:1px; height:128px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">Ông Tạ Đức Đích</span></span></strong></p>
+                    </td>
+                    <td style="width:243px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">197?-1998</span></span></strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:54px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">3</span></span></strong></p>
+                    </td>
+                    <td style="width:321px">
+                    <p style="text-align:center"><img alt="" src="/Upload/news/IMG_0249.jpg" style="border-style:solid; border-width:1px; height:120px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">Bà Vũ Thị Huệ</span></span></strong></p>
+                    </td>
+                    <td style="width:243px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">1998-2006</span></span></strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:54px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">4</span></span></strong></p>
+                    </td>
+                    <td style="width:321px">
+                    <p style="text-align:center"><img alt="" src="/Upload/news/IMG_0273.JPG" style="border-style:solid; border-width:1px; height:120px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">Bà Phạm Thị Tâm</span></span></strong></p>
+                    </td>
+                    <td style="width:243px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">2006-2018</span></span></strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:54px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">5</span></span></strong></p>
+                    </td>
+                    <td style="width:321px">
+                    <p style="text-align:center"><img alt="" src="/Upload/news/IMG_0244(1).JPG" style="border-style:solid; border-width:1px; height:120px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">Ông Đoàn Ngọc Vân</span></span></strong></p>
+                    </td>
+                    <td style="width:243px">
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">2018 đến nay</span></span></strong></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><span style="color:#0000FF"><strong><span style="font-size:16px">2- PHÓ GIÁM ĐỐC</span></strong></span></p>
+        
+        <table border="1" cellpadding="0" cellspacing="0" style="width:650px">
+            <tbody>
+                <tr>
+                    <td style="text-align:center; width:24px"><span style="font-size:16px"><span style="color:#0000FF"><strong>1</strong></span></span></td>
+                    <td style="text-align:center; width:221px">
+                    <p><img alt="" src="/Upload/news/no-avatar.jpg" style="height:120px; width:100px" /></p>
+        
+                    <p><span style="font-size:16px"><span style="color:#0000FF"><strong>Ông Nguyễn Mạnh Dư</strong></span></span></p>
+                    </td>
+                    <td style="text-align:center; width:180px"><span style="font-size:16px"><strong><span style="color:#0000FF">-----</span></strong></span></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center"><span style="font-size:16px"><span style="color:#0000FF"><strong>2</strong></span></span></td>
+                    <td style="text-align:center">
+                    <p><img alt="" src="/Upload/news/IMG_0273.JPG" style="border-style:solid; border-width:1px; height:120px; text-align:center; width:90px" /></p>
+        
+                    <p><span style="font-size:16px"><span style="color:#0000FF"><strong>Bà Phạm Thị Tâm</strong></span></span></p>
+                    </td>
+                    <td style="text-align:center"><span style="font-size:16px"><span style="color:#0000FF"><strong>1998-2006</strong></span></span></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center"><span style="font-size:16px"><span style="color:#0000FF"><strong>3</strong></span></span></td>
+                    <td style="text-align:center">
+                    <p><img alt="" src="/Upload/news/IMG_0244(1).JPG" style="border-style:solid; border-width:1px; height:120px; text-align:center; width:90px" /></p>
+        
+                    <p><span style="font-size:16px"><span style="color:#0000FF"><strong>Ông Đoàn Ngọc Vân</strong></span></span></p>
+                    </td>
+                    <td style="text-align:center"><span style="font-size:16px"><span style="color:#0000FF"><strong>2006-2018</strong></span></span></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center"><span style="font-size:16px"><span style="color:#0000FF"><strong>4</strong></span></span></td>
+                    <td style="text-align:center">
+                    <p><img alt="" src="/Upload/news/IMG_0285(1).JPG" style="border-style:solid; border-width:1px; height:120px; width:90px" /></p>
+        
+                    <p><span style="font-size:16px"><span style="color:#0000FF"><strong>Bà Nguyễn Thị Thu Điệp</strong></span></span></p>
+                    </td>
+                    <td style="text-align:center"><span style="font-size:16px"><span style="color:#0000FF"><strong>2018 đến nay</strong></span></span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><em><strong><span style="font-size:16px"><span style="color:#0000FF">CHỨC NĂNG, NHIỆM VỤ:</span></span></strong></em></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">Chức năng:</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">&nbsp;Tham mưu cho Hiệu trưởng về quản lý, lưu trữ và phát triển tài nguyên thông tin. Tổ chức thu thập, xử lý, lưu trữ, cung cấp và phục vụ bạn đọc các tài nguyên thông tin đáp ứng công tác đào tạo, nghiên cứu khoa học.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">Nhiệm vụ:</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">- Xây dựng, thực hiện chiến lược, chương trình, kế hoạch phát triển công tác thông tin thư viện. Từng bước xây dựng Trung tâm trở thành thư viện điện tử hiện đại đáp ứng mục tiêu, chiến lược phát triển của Nhà trường.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">- Tổ chức, quản lý và khai thác có hiệu quả các loại tài nguyên thông tin phục vụ yêu cầu giảng dạy, học tập và nghiên cứu khoa học của cán bộ, giáo viên và sinh viên.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">- Nâng cao trình độ chuyên môn nghiệp vụ, ngoại ngữ, tin học đội ngũ cán bộ thư viện.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">- Thu nhận các tài nguyên thông tin trong trường (giáo trình, tạp chí, tài liệu hội nghị, hội thảo, đề tài nghiên cứu khoa học, luận án, luận văn, khoá luận…)</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">- Tổ chức sắp xếp, bảo quản, quản lý, kiểm kê các loại tài nguyên thông tin.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">- Xây dựng hệ thống tra cứu, hướng dẫn và giúp đỡ bạn đọc tra cứu tìm tin, khai thác, sử dụng các nguồn tài nguyên thông tin.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">- Phối hợp với các đơn vị liên quan để thực hiện nhiệm vụ được giao.</span></span></strong></p>
+        
+        <p><strong><span style="font-size:16px"><span style="color:#0000FF">- Mở rộng quan hệ đối ngoại với các thư viện trong và ngoài nước nhằm trao đổi nghiệp vụ, chia sẻ tài nguyên thông tin và tìm kiếm các nguồn tài trợ.</span></span></strong></p>
+        
+        <p style="text-align:center"><span style="color:#800000"><u><span style="font-size:16px"><strong>CƠ CẤU TỔ CHỨC</strong></span></u></span></p>
+        
+        <p style="text-align:center"><span style="font-size:16px"><strong><span style="color:#0000FF">Tổng số cán bộ-viên chức: 15 người</span></strong></span></p>
+        
+        <p style="text-align:center"><span style="font-size:16px"><strong><span style="color:#0000FF">CHI BỘ- BAN GIÁM ĐỐC- CÔNG ĐOÀN-CHI ĐOÀN THANH NIÊN</span></strong></span><strong><span style="color:#0000FF">&nbsp;</span></strong></p>
+        
+        <table border="0" cellpadding="0" cellspacing="0" style="width:750px">
+            <tbody>
+                <tr>
+                    <td><span style="color:#0000FF"><u><span style="font-size:14px"><strong>&nbsp;CHI</strong></span>​</u><strong><u>&nbsp;BỘ</u> :</strong></span><span style="font-size:14px"><span style="color:#0000FF"><strong>&nbsp;Nguyễn Thị Thu Điệp: Bí thư</strong></span></span></td>
+                    <td style="text-align:center"><span style="font-size:14px"><span style="color:#0000FF"><strong>Đoàn Ngọc Vân: Phó B</strong><strong>í thư&nbsp;</strong></span></span></td>
+                    <td style="text-align:center"><span style="font-size:14px"><span style="color:#0000FF"><strong>Hoàng Thị Bích Thủy: Chi ủy viên</strong></span></span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><span style="color:#0000FF"><span style="font-size:14px"><strong><u>CÔNG ĐOÀN</u> :&nbsp;Hoàng Thị Bích Thủy : Tổ trưởng. Lê Thị Thanh Hảo : Tổ phó</strong></span></span></p>
+        
+        <p><span style="font-size:14px"><span style="color:#0000FF"><strong><u>CHI ĐOÀN</u> : Trần Thị Nga: Bí thư. Lê Thị Hiệu: Phó bí thư</strong></span></span></p>
+        
+        <table border="1" cellpadding="0" cellspacing="0" style="width:750px">
+            <tbody>
+                <tr>
+                    <td style="text-align:center; width:200px"><strong><span style="color:rgb(0, 0, 255)">CÁC PHÒNG NGHIỆP VỤ</span></strong></td>
+                    <td style="text-align:center; width:35px">&nbsp;</td>
+                    <td style="width:25px">&nbsp; &nbsp; &nbsp;</td>
+                </tr>
+                <tr>
+                    <td><span style="font-size:16px"><span style="color:#0000FF"><strong>1- Bổ sung -Trao đổi</strong></span></span></td>
+                    <td>
+                    <p style="text-align:center"><img alt="" src="/Upload/news/le%20thi%20hao.JPG" style="border-style:solid; border-width:1px; height:128px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:rgb(0, 0, 255)">Lê Thị Thanh Hảo</span></span></strong></p>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><strong><span style="font-size:16px"><span style="color:#0000FF">2- Xử lý thông tin</span></span></strong></td>
+                    <td>
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF"><img alt="" src="/Upload/news/hoang%20bich%20thuy(1).JPG" style="border-style:solid; border-width:1px; height:120px; width:90px" /></span></span></strong></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:rgb(0, 0, 255)">Hoàng Thị Bích Thủy</span></span></strong></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF"><img alt="" src="/Upload/news/vu%20thi%20lien.JPG" style="border-style:solid; border-width:1px; height:120px; width:90px" /></span></span></strong><br />
+                    &nbsp;</p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:rgb(0, 0, 255)">Vũ Thị Liên</span></span></strong></p>
+                    </td>
+                    <td>
+                    <p style="text-align:center"><img alt="" src="/Upload/news/IMG_0265(1).JPG" style="border-style:solid; border-width:1px; height:120px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:rgb(0, 0, 255)">Vũ Ngọc Minh</span></span></strong></p>
+        
+                    <p style="text-align:center"><img alt="" src="/Upload/news/Bao(1).jpg" style="border-style:solid; border-width:1px; height:124px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:rgb(0, 0, 255)">Hoàng Thị Bão</span></span></strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">CÁC PHÒNG PHỤC VỤ</span></span></strong></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><strong><span style="font-size:16px"><span style="color:#0000FF">1- Phòng đọc sinh viên</span></span></strong></td>
+                    <td>
+                    <p style="text-align:center"><img alt="" src="/Upload/news/pham%20bao%20ninh(1).jpg" style="border-style:solid; border-width:1px; height:120px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">Phạm Bảo Ninh</span></span></strong><br />
+                    &nbsp;</p>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><strong><span style="font-size:16px"><span style="color:#0000FF">2- Phòng Báo tạp chí, Khóa luận TN</span></span></strong></td>
+                    <td>
+                    <p style="text-align:center"><img alt="" src="/Upload/news/tran%20thi%20my2.JPG" style="border-style:solid; border-width:1px; height:120px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">Trần Thị Mỹ</span></span></strong><br />
+                    &nbsp;</p>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><strong><span style="font-size:16px"><span style="color:#0000FF">&amp; -&nbsp;Phòng Ngoại Văn</span></span></strong></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><strong><span style="font-size:16px"><span style="color:#0000FF">3-&nbsp; Phòng đọc Sau đại học</span></span></strong></td>
+                    <td>
+                    <p style="text-align:center"><img alt="" src="/Upload/news/hieu%20n(1).jpg" style="border-style:solid; border-width:1px; height:127px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF">Lê Thị Hiệu</span></span></strong><br />
+                    &nbsp;</p>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><strong><span style="font-size:16px"><span style="color:#0000FF">4- Phòng mượn tài liệu</span></span></strong></td>
+                    <td>
+                    <p style="text-align:center"><img alt="" src="/Upload/news/IMG_0315(1).JPG" style="border-style:solid; border-width:1px; height:120px; width:90px" /></p>
+        
+                    <p style="text-align:center"><span style="color:#0000FF"><strong><span style="font-size:14px">Trần Thị Nga</span></strong></span></p>
+                    </td>
+                    <td>
+                    <p>&nbsp;</p>
+        
+                    <p style="text-align:center"><strong><span style="color:#0000FF"><span style="font-size:14px">&nbsp;Đỗ Thị Nhinh</span></span></strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong><span style="font-size:16px"><span style="color:#0000FF">5 - Phòng Giáo trình</span></span></strong></td>
+                    <td>
+                    <p style="text-align:center"><img alt="" src="/Upload/news/Duong%20Son(1).jpg" style="border-style:solid; border-width:1px; height:135px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:rgb(0, 0, 255)">Dương Phúc Sơn</span></span></strong></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:#0000FF"><img alt="" src="/Upload/news/le%20thi%20hue.JPG" style="border-style:solid; border-width:1px; height:128px; width:90px" /></span></span></strong><br />
+                    &nbsp;</p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:rgb(0, 0, 255)">Lê Thị Huệ</span></span></strong></p>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><strong><span style="font-size:16px"><span style="color:#0000FF">6 - Phòng Đa phương tiện</span></span></strong></td>
+                    <td style="width:45px">
+                    <p style="text-align:center"><img alt="" src="/Upload/news/nguyen%20phuong%20lan.JPG" style="border-style:solid; border-width:1px; height:120px; width:90px" /></p>
+        
+                    <p style="text-align:center"><strong><span style="font-size:16px"><span style="color:rgb(0, 0, 255)">&nbsp;Nguyễn Thị Phương Lan</span></span></strong></p>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p>&nbsp;</p>
+        
+        <div>&nbsp;</div>
+        
+        <div>&nbsp;</div>    </div> 
+        
+                            </div>	
+                            </div>
+                    </div>
+                </div>
+        
+    <script src="{{ url_for('static', filename='components/jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ url_for('static', filename='components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="{{ url_for('static', filename='components/metisMenu/dist/metisMenu.min.js') }}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ url_for('static', filename='assets/js/sb-admin-2.js') }}"></script>
+    <!-- DataTables JavaScript -->
+    <script src="{{ url_for('static', filename='components/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+</body>
+
+</html>

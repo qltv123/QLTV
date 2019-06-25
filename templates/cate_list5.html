@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename='components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="{{ url_for('static', filename='components/metisMenu/dist/metisMenu.min.css') }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='assets/css/sb-admin.css') }}" rel="stylesheet">
+    <!-- Custom Fonts -->
+
+    <link href="{{ url_for('static', filename='components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- DataTables CSS -->
+    <link href="{{ url_for('static', filename='components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+
+    <link href="{{ url_for('static', filename='components/datatables-responsive/css/dataTables.responsive.css') }}" rel="stylesheet">
+    <!-- <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"> -->
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Library Management</a>
+            </div>
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-nav">
+                <!-- <li class="active"><a href="#">Home</a></li> -->
+                <li><a href="#">About</a></li>
+                <li><a href="#">contact</a></li>
+                <!-- <li><a href="#">Page 3</a></li> -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Welcome</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+            <!-- /.navbar-top-links -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="/TrangChu"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
+                        </li>
+                        <li>
+                            <a href="/NQ"><i class="fa fa-book fa-fw"></i>Nội quy thư viện<span class="fa arrow"></span></a>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-cube fa-fw"></i>Quy định làm thẻ<span class="fa arrow"></span></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="/AddBook"><i class="fa fa-archive fa-fw"></i> Quản lý sách<span class="fa arrow"></span></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li> 
+                        <li>
+                            <a href="/AddCardUser"><i class="fa fa-tags"></i> Quản lý bạn đọc<span class="fa arrow"></span></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li> 
+                        
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                   <ol class="breadcrumb">
+                       <li>
+                           <a href="#">Home</a>
+                       </li>
+                       <li>
+                           <a href="#">Book</a>
+                       </li>
+                   </ol>
+                   <!-- <div class="button">
+                       <a href="" class="btn btn-primary"><i class="fa fa-plus"></i>ADD</a> -->
+                       
+                       <div class="newsDetails">
+                            <div class="container" id="conNews" style="width: 100% ;">
+                                <p style="text-align:center"><span style="font-family:Times New Roman,Times,serif"><strong><span style="font-size:26.0pt"><span style="background-color:white"><span style="color:#0f1410">THỂ LỆ CẤP THẺ</span></span></span></strong></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><strong><span style="font-size:14.0pt"><span style="color:#0f1410">I. ĐỐI TƯỢNG NGƯỜI LỚN:</span></span></strong></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">Từ 15 tuổi trở lên đang sinh sống và làm việc trên địa bàn Hà Nội.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">1. THẺ ĐỌC : </span></span></span></strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">(Dùng cho bạn đọc đọc sách tại chỗ).</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">* Thủ tục:</span></span></span></strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410"> CMT nhân dân hoặc thẻ căn cước hoặc hộ chiếu.</span></span></span></span></span></p>
+            
+            <p style="margin-left:36.0pt; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Phí làm thẻ : 20.000đ/ thẻ/ năm.</span></span></span></span></span></p>
+            
+            <p style="margin-left:36.0pt; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8.000đ/ thẻ/ quý.</span></span></span></span></span></p>
+            
+            <p style="margin-left:36.0pt; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Tiền làm thẻ cứng: 20.000đ/ thẻ.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">2. THẺ MƯỢN:<em> </em></span></span></span></strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">(Dùng cho bạn đọc mượn sách về nhà).</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">* <strong>Thủ tục</strong>: CMT nhân dân hoặc thẻ căn cước hoặc hộ chiếu; Hộ khẩu thường trú tại Hà Nội hoặc giấy xác nhận tạm trú có thời hạn ít nhất 1 năm (trường hợp bạn đọc không có CMTND do Công an Hà Nội cấp).</span></span></span></span></span></p>
+            
+            <p style="margin-left:36.0pt; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Phí làm thẻ: &nbsp;20.000đ/ thẻ/ năm.</span></span></span></span></span></p>
+            
+            <p style="margin-left:36.0pt; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8.000đ/ thẻ/quý. </span></span></span></span></span></p>
+            
+            <p style="margin-left:36.0pt; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Tiền làm thẻ cứng: &nbsp;20.000đ/ thẻ.</span></span></span></span></span></p>
+            
+            <p style="margin-left:36.0pt; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Tiền cược sách: &nbsp; &nbsp;100.000đ/ thẻ/ năm.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">3. THẺ MƯỢN - ĐỌC : </span></span></span></strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">(Dùng cho bạn đọc đọc sách tại chỗ và mượn sách về nhà).</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">* <strong>Thủ tục</strong>: CMT nhân dân hoặc thẻ căn cước hoặc hộ chiếu; Hộ khẩu thường trú tại Hà Nội hoặc giấy xác nhận tạm trú có thời hạn ít nhất 1 năm (trường hợp bạn đọc không có CMTND do Công an Hà Nội cấp).</span></span></span></span></span></p>
+            
+            <p style="text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-&nbsp;Phí làm thẻ: 40.000đ/ thẻ/ năm. </span></span></span></span></span></p>
+            
+            <p style="margin-left:36.0pt; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;16.000đ /thẻ/ quý.</span></span></span></span></span></p>
+            
+            <p style="margin-left:36.0pt; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Tiền làm thẻ cứng: 20.000đ/ thẻ.</span></span></span></span></span></p>
+            
+            <p style="margin-left:36.0pt; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Tiền cược sách: 100.000đ/ thẻ/ năm.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">II. ĐỐI TƯỢNG TRẺ EM : </span></span></span></strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">Trẻ em dưới 15 tuổi</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">* Thủ tục: </span></span></span></strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">Sổ hộ khẩu (bản photo)</span></span></span></span></span></p>
+            
+            <p style="margin-left:36.0pt; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Phí làm thẻ mượn - đọc: 20.000đ/ thẻ/ năm.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8.000đ/ thẻ/ quý.</span></span></span></span></span></p>
+            
+            <p style="text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Tiền làm thẻ cứng: 20.000đ/ thẻ. </span></span></span></span></span></p>
+            
+            <p style="margin-left:36.0pt; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Tiền cược sách: 30.000đ/ thẻ/ năm.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">III. ĐỐI TƯỢNG MIỄN, GIẢM:</span></span></span></strong></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- </span></span></span></strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">Đối tượng miễn phí: </span></span></span><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#222222">Người khuyết tật đặc biệt nặng theo quy định tại khoản 1 điều 11 Nghị định 28/2012/NĐ-CP ngày 10/04/2012 của Chính phủ quy định chi tiết và hướng dẫn thi hành một số điều của Luật người khuyết tật.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Đối tượng giảm</span></span></span><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#222222"> 50% phí:</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#222222">+ Các đối tượng hưởng chính sách ưu đãi hưởng thụ văn hóa quy định tại Điều 2 Quyết định 170/2003 QĐ-TTg ngày 14/8/2003 của Thủ tướng Chính phủ về &ldquo;Chính sách ưu đãi hưởng thụ văn hóa&rdquo;. Trường hợp khó xác định là đối tượng hưởng chính sách ưu đãi hưởng thụ văn hóa quy định tại Điều 2 Quyết định 170/2003 QĐ-TTg thì chỉ cần có giấy xác nhận của Ủy ban nhân dân xã, phường, thị trấn nơi đối tượng cư trú.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#222222">+ Người khuyết tật nặng theo khoản 2 điều 11 Nghị định 28/2012/NĐ-CP ngày 10/04/2012 của Chính phủ quy định chi tiết và hướng dẫn thi hành một số điều của Luật người khuyết tật.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#222222">+ Trẻ em dưới 15 tuổi.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#222222">+ Người cao tuổi (là công dân Việt Nam từ 60 tuổi trở lên có thẻ người cao tuổi).</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#222222">+ Trường hợp người vừa thuộc diện hưởng chính sách ưu đãi hưởng thụ văn hóa vừa thuộc diện người khuyết tật nặng thì chỉ được giảm 50% mức phí thư viện.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><strong><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">GHI CHÚ:</span></span></span></strong></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Bạn đọc khi đến Thư viện làm thẻ không cần mang theo ảnh, ảnh sẽ được chụp trực tiếp.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Thẻ được cấp lại trong trường hợp: hỏng, mất hoặc thay đổi thông tin cá nhân (Tiền cấp lại thẻ: 20.000đ/ thẻ).</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">- Tiền cược sách của bạn đọc được trả lại khi đã trả hết sách, nộp lại &ldquo;Giấy thu tiền cược sách&rdquo; và thẻ thư viện.</span></span></span></span></span></p>
+            
+            <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="background-color:white"><span style="font-size:14.0pt"><span style="background-color:white"><span style="color:#0f1410">* <strong>THỜI GIAN CẤP THẺ</strong>: <strong>Các ngày trong tuần <em>(Nghỉ ngày Lễ, chủ nhật)</em>.</strong></span></span></span></span></span></p>
+            
+            <p><span style="font-family:Times New Roman,Times,serif"><span style="font-size:14.0pt"><span style="color:#0f1410">* Sáng: <strong>8h00&rsquo; - 11h00&rsquo;</strong>; Chiều: <strong>13h30&rsquo; -16h30&rsquo;</strong>.</span></span></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end content -->
+            
+                            <!-- footer-->
+            
+  
+    <script src="{{ url_for('static', filename='components/jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ url_for('static', filename='components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="{{ url_for('static', filename='components/metisMenu/dist/metisMenu.min.js') }}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ url_for('static', filename='assets/js/sb-admin-2.js') }}"></script>
+    <!-- DataTables JavaScript -->
+    <script src="{{ url_for('static', filename='components/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+</body>
+
+</html>

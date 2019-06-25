@@ -8,5 +8,5 @@ collection = db.user
 def get_all2():
     return list(collection.find())
 
-def insert_data_user(name,sex,birthday,cmt,job,wplace,phone,qt):
-    collection.insert_one({'name':name,'phone':phone, 'sex':sex, 'add':add})
+def insert_data_user(namek,sex,birth,cmt,job,level,wp,phone,ct,city,add,time):
+    collection.insert_one({'namek':namek,'sex':sex,'birth': birth,'cmt':cmt,'job':job,'level':level,'wp':wp,'phone':phone, 'ct':ct,'city':city,'add':add,'time':time})

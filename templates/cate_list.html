@@ -12,7 +12,7 @@
     <!-- MetisMenu CSS -->
     <link href="{{ url_for('static', filename='components/metisMenu/dist/metisMenu.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{ url_for('static', filename='assets/css/sb-admin-2.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/sb-admin.css') }}" rel="stylesheet">
     <!-- Custom Fonts -->
 
     <link href="{{ url_for('static', filename='components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
@@ -48,7 +48,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Welcome</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="/out"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
             </ul>
             <!-- /.navbar-top-links -->
             <div class="navbar-default sidebar" role="navigation">
@@ -56,73 +56,43 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
+                                <input href="/search" type="text" class="form-control" placeholder="Search...">
+                                <span  class="input-group-btn">
+                                    <button  class="btn btn-default" type="button">
+                                        <i  class="fa fa-search"></i>
                                     </button>
                                 </span>
                             </div>
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
+                            <a href="/TrangChu"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-book fa-fw"></i>Nội quy thư viện<span class="fa arrow"></span></a>
+                            <a href="/NQ"><i class="fa fa-book fa-fw"></i>Nội quy thư viện<span class="fa arrow"></span></a>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cube fa-fw"></i>Quy định làm thẻ<span class="fa arrow"></span></a>
+                            <a href="QD"><i class="fa fa-cube fa-fw"></i>Quy định làm thẻ<span class="fa arrow"></span></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-archive fa-fw"></i> Quản lý sách<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">List Product</a>
-                                </li>
-                                <li>
-                                    <a href="#">Add Product</a>
-                                </li>
-                            </ul>
+                            <a href="/AddBook"><i class="fa fa-archive fa-fw"></i> Quản lý sách<span class="fa arrow"></span></a>
+                            
                             <!-- /.nav-second-level -->
                         </li> 
                         <li>
-                            <a href="#"><i class="fa fa-tags"></i> Quản lý bạn đọc<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="indexKH.html">Làm thẻ bạn đọc</a>
-                                </li>
-                                <li>
-                                    <a href="#">Add Product</a>
-                                </li>
-                            </ul>
+                            <a href="/AddCardUser"><i class="fa fa-tags"></i> Quản lý bạn đọc<span class="fa arrow"></span></a>
+                            
                             <!-- /.nav-second-level -->
                         </li> 
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i>Quản lý mượn sách<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">List Product</a>
-                                </li>
-                                <li>
-                                    <a href="#">Add Product</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bookmark fa-fw"></i> Quản lý bán sách<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">List User</a>
-                                </li>
-                                <li>
-                                    <a href="#">Add User</a>
-                                </li>
-                            </ul>
+                            <a href="/AddCardUser"><i class="fa fa-tags"></i> Quản lý mượn sách<span class="fa arrow"></span></a>
+                                
+                                <!-- /.nav-second-level -->
+                        </li> 
+                        
                             <!-- /.nav-second-level -->
                         </li>
                     </ul>
@@ -145,12 +115,15 @@
                    </ol>
                    <!-- <div class="button">
                        <a href="" class="btn btn-primary"><i class="fa fa-plus"></i>ADD</a> -->
-                       
+                    
+
                     <form method="post">
                         <label>TÊN SÁCH</label>
-                        <input name="name"/>
+                        <input name="names"/>
+                        <label>ẢNH</label>
+                        <input name="link"/>
                         <label>NHÀ XUẤT BẢN</label>
-                        <input name="nxb"/><br>
+                        <input name="nxb"/>
                         <label>SỐ LƯỢNG</label>
                         <input name="sl"/>
                         <label>GIÁ</label>
@@ -167,25 +140,28 @@
                             <tr align="center">
                                 <th>STT</th>
                                 <th>Tên sách</th>
-                                <th>Nhà xuất bản</th>
+                                <th>Hình ảnh</th>
                                 <th>Số lượng</th>
+                                <th>Nhà xuất bản</th>
                                 <th>Giá</th>
                                 <th>Delete</th>
                                 <th>Edit</th>
                             </tr>
                         
                             <!-- <tr class="odd gradeX" align="center"> -->
+                                    {% for i in dulieu %}
                             <tr>
-                                {% for i in dulieu %}
                                 <td>1</td>
-                                <td>{{ i.names }}</td>
-                                <td>{{ i.nxb }}</td>
+                                <td>{{ i.names }} </td>
+                                <td><img width="70" height="100" src="{{ i.link}}"/></td>
                                 <td>{{ i.sl }}</td>
+                                <td>{{ i.nxb }}</td>
                                 <td>{{ i.price }}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="delete_book/{{ i._id}}">Delete</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="edit_book/{{i._id}}">Edit</a></td>
-                                {% endfor %}
+                                
                             </tr>
+                            {% endfor %}
                            
                         
                     </table>

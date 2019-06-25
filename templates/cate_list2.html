@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename='components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="{{ url_for('static', filename='components/metisMenu/dist/metisMenu.min.css') }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='assets/css/sb-admin.css') }}" rel="stylesheet">
+    <!-- Custom Fonts -->
+
+    <link href="{{ url_for('static', filename='components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- DataTables CSS -->
+    <link href="{{ url_for('static', filename='components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+
+    <link href="{{ url_for('static', filename='components/datatables-responsive/css/dataTables.responsive.css') }}" rel="stylesheet">
+    <!-- <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"> -->
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Library Management</a>
+            </div>
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-nav">
+                <!-- <li class="active"><a href="#">Home</a></li> -->
+                <li><a href="#">About</a></li>
+                <li><a href="#">contact</a></li>
+                <!-- <li><a href="#">Page 3</a></li> -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Welcome</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+            <!-- /.navbar-top-links -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="TrangChu"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
+                        </li>
+                        <li>
+                            <a href="/NQ"><i class="fa fa-book fa-fw"></i>Nội quy thư viện<span class="fa arrow"></span></a>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="QD"><i class="fa fa-cube fa-fw"></i>Quy định làm thẻ<span class="fa arrow"></span></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="/AddBook"><i class="fa fa-archive fa-fw"></i> Quản lý sách<span class="fa arrow"></span></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li> 
+                        <li>
+                            <a href="AddCardUser"><i class="fa fa-tags"></i> Quản lý bạn đọc<span class="fa arrow"></span></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li> 
+                       
+                        
+                            <!-- /.nav-second-level -->
+                        
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                   <ol class="breadcrumb">
+                       <li>
+                           <a href="TrangChu">Home</a>
+                       </li>
+                       <li>
+                           <a href="AddCardUser">Add User</a>
+                       </li>
+                   </ol>
+                   <!-- <div class="button">
+                       <a href="" class="btn btn-primary"><i class="fa fa-plus"></i>ADD</a> -->
+                       
+                       <div class="right-home">
+                            <div class="right-listnew">
+                                <div class="new3">
+                                    <div id="cphContent_upd">
+                        
+                                            <table border="0" cellspacing="0" cellpadding="0" width="100%" class="tblData">
+                                                <tr>
+                                                    <td height="10px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" align="center">
+                                                        <b>NHẬP THÔNG TIN CÁ NHÂN ĐĂNG KÝ LÀM THẺ ĐỌC TẠI THƯ VIỆN</b>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td height="10px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="10%"></td>
+                                                    <td nowrap="nowrap"></td>
+                                                    <td width="80%"></td>
+                                                    <td width="10%"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        
+                                                    </td>
+                                                </tr>
+                                        <form method="post">
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap" valign="top" colspan="3"><b>Thông tin cá nhân:</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap" valign="top">Họ tên:&nbsp;</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input name="namek" type="text" maxlength="80" id="cphContent_txtHoTen" class="form-control" placeholder="Họ tên" />
+                                                            <div class="input-group-addon">
+                                                                <i class="fa fa-font"></i>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>&nbsp;<span class="lbError">*</span></td>
+                                                </tr>
+                                                <tr class="lbError">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <span id="cphContent_rfvHoTen" style="display:none;">Yêu cầu nhập Họ tên</span></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap">Giới tính:&nbsp;</td>
+                                                    <td>
+                                                        
+                                                        <select name="sex" id="cphContent_ddlNgheNghiep" class="selectpicker show-tick form-control" data-live-search="true" style="width: 100%;">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ" >Nữ</option>
+                        </select>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap">Ngày sinh:&nbsp;</td>
+                                                    <td>
+                    
+                                                        <div class="input-group">
+                                                            <input name="birth" type="text" maxlength="10" id="cphContent_txtNgaySinh" class="datepicker form-control pull-right" placeholder="Ngày sinh" data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;" data-mask="" />
+                                                            <div class="input-group-addon">
+                                                                <i class="fa fa-calendar"></i>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                                                </tr>
+                                                <tr class="lbError">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <span id="cphContent_RequiredFieldValidator2" style="display:none;">Yêu cầu nhập Ngày sinh</span></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap">Số CMTND:&nbsp;</td>
+                                                    <td>
+                                                        <div class="input-group ">
+                                                            <input name="cmt" type="text" maxlength="20" id="cphContent_txtSoCMTND" class="form-control" placeholder="Số CMTND" style="width:100%;" />
+                                                            <div class="input-group-addon">
+                                                                <i class="fa fa-font"></i>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr class="lbError">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <span id="cphContent_RequiredFieldValidator3" style="display:none;">Số CMTND chỉ được phép nhập số.</span></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr class="lbError">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <span id="cphContent_RequiredFieldValidator4" style="display:none;">Yêu cầu nhập Số CMTND</span></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap">Nghề nghiệp:&nbsp;</td>
+                                                    <td>
+                                                        <select name="job" id="cphContent_ddlNgheNghiep" class="selectpicker show-tick form-control" data-live-search="true" style="width: 100%;">
+                            <option value="77">B&#225;c sỹ</option>
+                            <option value="92">Bi&#234;n tập vi&#234;n</option>
+                            <option value="96">Bộ đội</option>
+                            <option value="1">C&#225;n bộ vi&#234;n chức</option>
+                            <option value="13">C&#244;ng an</option>
+                            <option value="60">C&#244;ng Nghệ Th&#244;ng Tin</option>
+                            <option value="91">Điện lực</option>
+                            <option value="23">Du lịch</option>
+                            <option value="85">Dược Sỹ</option>
+                            <option value="71">Giảng vi&#234;n</option>
+                            <option value="56">Gi&#225;o vi&#234;n</option>
+                            <option value="70">Học sinh</option>
+                            <option value="48">Hưu tr&#237;</option>
+                            <option value="65">Kế to&#225;n</option>
+                            <option value="83">Kiểm to&#225;n</option>
+                            <option value="27">Kinh doanh</option>
+                            <option value="94">Kỹ Thuật vi&#234;n</option>
+                            <option value="37">L&#226;m nghiệp</option>
+                            <option value="81">Lập tr&#236;nh vi&#234;n</option>
+                            <option value="74">Luật sư</option>
+                            <option value="89">Mẫu gi&#225;o</option>
+                            <option value="68">Nh&#224; b&#225;o</option>
+                            <option value="78">Nội trợ</option>
+                            <option value="41">N&#244;ng nghiệp</option>
+                            <option value="51">Phi&#234;n dịch</option>
+                            <option value="50">Sinh vi&#234;n</option>
+                            <option value="11">T&#224;i ch&#237;nh</option>
+                            <option value="72">Thiết kế</option>
+                            <option value="67">Tự do</option>
+                            <option value="10">Tư ph&#225;p</option>
+                            <option value="19">Tư vấn</option>
+                    
+                        </select>
+                                                    </td>
+                                                    <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                                                </tr>
+                                                <tr class="lbError">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <span id="cphContent_RequiredFieldValidator5" style="display:none;">Yêu cầu chọn Nghề nghiệp</span></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap">Trình độ:&nbsp;</td>
+                                                    <td>
+                                                        <select name="level" id="cphContent_ddlTrinhDo" class="selectpicker show-tick form-control" data-live-search="true" style="width: 100%;">
+                            <option value="30">10 tr&#234;n 10</option>
+                            <option value="31">12 tr&#234;n 12</option>
+                            <option value="1">Cao đẳng</option>
+                            <option value="6">Đại học</option>
+                            <option value="7">Gi&#225;o sư</option>
+                            <option value="23">Mầm non</option>
+                            <option value="5">Thạc sĩ</option>
+                            <option value="4">Tiến sĩ</option>
+                            <option value="2">Tiểu học</option>
+                            <option value="25">Trung cấp</option>
+                            <option value="3">Trung học cơ sở</option>
+                            <option value="11">Trung học phổ th&#244;ng</option>
+                    
+                        </select></td>
+                                                    <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                                                </tr>
+                                                <tr class="lbError">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <span id="cphContent_RequiredFieldValidator6" style="display:none;">Yêu cầu chọn Trình độ</span></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap">Nơi công tác:&nbsp;</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <textarea name="wp" rows="3" cols="20" id="cphContent_txtNoiCongTac" class="form-control" onKeyUp="javascript:CheckMaxLength(this, 150);" placeholder="Nơi công tác" style="width:100%;">
+                    </textarea>
+                                                            <div class="input-group-addon">
+                                                                <i class="fa fa-font"></i>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                                                </tr>
+                                                <tr class="lbError">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <span id="cphContent_RequiredFieldValidator7" style="display:none;">Yêu cầu nhập Nơi công tác</span></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap" valign="top" colspan="3"><b>Thông tin liên hệ:</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap">Điện thoại:&nbsp;</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input name="phone" type="text" maxlength="12" id="cphContent_txtDienThoai" class="form-control" placeholder="Điện thoại" style="width:100%;" />
+                                                            <div class="input-group-addon">
+                                                                <i class="fa fa-font"></i>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                                                </tr>
+                                                <tr class="lbError">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <span id="cphContent_RequiredFieldValidator8" style="display:none;">Yêu cầu nhập Điện thoại</span></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap">Quốc tịch:&nbsp;</td>
+                                                    <td>
+                                                        <select name="ct" id="cphContent_ddlQuocTich" class="selectpicker show-tick form-control" data-live-search="true" style="width: 100%;">
+                            <option value="1">Afghanistan</option>
+                            <option value="2">Aland Islands</option>
+                            <option value="3">Albania</option>
+                            <option value="4">Algeria</option>
+                            <option value="5">American Samoa</option>
+                            <option value="6">Andorra</option>
+                            <option value="7">Angola</option>
+                            <option value="8">Anguilla</option>
+                            <option value="9">Antarctica</option>
+                            <option value="10">Antigua And Barbuda</option>
+                            <option value="11">Argentina</option>
+                            <option value="12">Armenia</option>
+                            <option value="14">Aruba</option>
+                            <option value="13">Australia</option>
+                            <option value="15">Austria</option>
+                            <option value="16">Azerbaijan</option>
+                            <option value="17">Bahamas</option>
+                            <option value="18">Bahrain</option>
+                            <option value="19">Bangladesh</option>
+                            <option value="20">Barbados</option>
+                            <option value="21">Belarus</option>
+                            <option value="22">Belgium</option>
+                            <option value="23">Belize</option>
+                            <option value="24">Benin</option>
+                            <option value="25">Bermuda</option>
+                            <option value="26">Bhutan</option>
+                            <option value="27">Bolivia</option>
+                            <option value="28">Bosnia and Herzegovina</option>
+                            <option value="29">Botswana</option>
+                            <option value="30">Bouvet Island</option>
+                            <option value="31">Brazil</option>
+                            <option value="32">British Indian Ocean Territory</option>
+                            <option value="33">Brunei Darussalam</option>
+                            <option value="34">Bulgaria</option>
+                            <option value="35">Burkina Faso</option>
+                            <option value="36">Burundi</option>
+                            <option value="37">Cambodia</option>
+                            <option value="38">Cameroon</option>
+                            <option value="39">Canada</option>
+                            <option value="40">Cape Verde</option>
+                            <option value="41">Cayman Islands</option>
+                            <option value="42">Central African Republic</option>
+                            <option value="43">Chad</option>
+                            <option value="44">Chile</option>
+                            <option value="45">China</option>
+                            <option value="46">Christmas Island</option>
+                            <option value="47">Cocos (Keeling) Islands</option>
+                            <option value="48">Colombia</option>
+                            <option value="49">Comoros</option>
+                            <option value="50">Congo</option>
+                            <option value="51">Congo, The Democratic Republic of the</option>
+                            <option value="52">Cook Islands</option>
+                            <option value="53">Costa Rica</option>
+                            <option value="54">Croatia</option>
+                            <option value="55">Cuba</option>
+                            <option value="56">Cyprus</option>
+                            <option value="57">Czech Republic</option>
+                            <option value="58">Denmark</option>
+                            <option value="59">Djibouti</option>
+                            <option value="60">Dominica</option>
+                            <option value="61">Dominican Republic</option>
+                            <option value="62">Ecuador</option>
+                            <option value="63">Egypt</option>
+                            <option value="64">El Salvador</option>
+                            <option value="65">Equatorial Guinea</option>
+                            <option value="66">Eritrea</option>
+                            <option value="67">Estonia</option>
+                            <option value="68">Ethiopia</option>
+                            <option value="69">Falkland Islands (Malvinas)</option>
+                            <option value="70">Faroe Islands</option>
+                            <option value="71">Fiji</option>
+                            <option value="72">Finland</option>
+                            <option value="73">France</option>
+                            <option value="74">French Guiana</option>
+                            <option value="75">French Polynesia</option>
+                            <option value="76">French Southern Territories</option>
+                            <option value="77">Gabon</option>
+                            <option value="78">Gambia</option>
+                            <option value="79">Georgia</option>
+                            <option value="80">Germany</option>
+                            <option value="81">Ghana</option>
+                            <option value="82">Gibraltar</option>
+                            <option value="83">Greece</option>
+                            <option value="84">Greenland</option>
+                            <option value="85">Grenada</option>
+                            <option value="86">Guadeloupe</option>
+                            <option value="87">Guam</option>
+                            <option value="88">Guatemala</option>
+                            <option value="89">Guernsey</option>
+                            <option value="90">Guinea</option>
+                            <option value="91">Guinea-Bissau</option>
+                            <option value="92">Guyana</option>
+                            <option value="93">Haiti</option>
+                            <option value="94">Heard Island and mcdonald Islands</option>
+                            <option value="95">Holy see (vatican city state)</option>
+                            <option value="96">Honduras</option>
+                            <option value="97">Hong Kong</option>
+                            <option value="98">Hungary</option>
+                            <option value="99">Iceland</option>
+                            <option value="100">India</option>
+                            <option value="101">Indonesia</option>
+                            <option value="102">Iran, Islamic Republic Of</option>
+                            <option value="103">Iraq</option>
+                            <option value="104">Ireland</option>
+                            <option value="105">Isle of Man</option>
+                            <option value="106">Israel</option>
+                            <option value="107">Italy</option>
+                            <option value="108">Jamaica</option>
+                            <option value="109">Japan</option>
+                            <option value="110">Jersey</option>
+                            <option value="111">Jordan</option>
+                            <option value="112">Kazakhstan</option>
+                            <option value="113">Kenya</option>
+                            <option value="115">Kerea, democratic people&quot;s Republic Of</option>
+                            <option value="114">Kiribati</option>
+                            <option value="116">Korea, Republic Of</option>
+                            <option value="117">Kuwait</option>
+                            <option value="118">Kyrgyzstan</option>
+                            <option value="119">Lao People&quot;s Democratic Republic</option>
+                            <option value="120">Latvia</option>
+                            <option value="121">Lebanon</option>
+                            <option value="122">Lesotho</option>
+                            <option value="123">Liberia</option>
+                            <option value="124">Libyan arab jamahiriya</option>
+                            <option value="125">Liechtenstein</option>
+                            <option value="126">Lithuania</option>
+                            <option value="127">Luxembourg</option>
+                            <option value="128">Macao</option>
+                            <option value="129">Macedonia, the for mer yugoslav Republic of</option>
+                            <option value="130">Madagascar</option>
+                            <option value="131">Malawi</option>
+                            <option value="132">Malaysia</option>
+                            <option value="133">Maldives</option>
+                            <option value="134">Mali</option>
+                            <option value="135">Malta</option>
+                            <option value="136">Marshall Islands</option>
+                            <option value="137">Martinique</option>
+                            <option value="138">Mauritania</option>
+                            <option value="139">Mauritius</option>
+                            <option value="140">Mayotte</option>
+                            <option value="141">Mexico</option>
+                            <option value="142">Micronesia, Federated States Of</option>
+                            <option value="143">Moldova, Republic Of</option>
+                            <option value="144">Monaco</option>
+                            <option value="145">Mongolia</option>
+                            <option value="146">Montenegro</option>
+                            <option value="147">Montserrat</option>
+                            <option value="148">Morocco</option>
+                            <option value="149">Mozambique</option>
+                            <option value="150">Myanmar</option>
+                            <option value="151">Namibia</option>
+                            <option value="152">Nauru</option>
+                            <option value="153">Nepal</option>
+                            <option value="154">Netherlands</option>
+                            <option value="155">Netherlands Antilles</option>
+                            <option value="156">New Calebonia</option>
+                            <option value="157">New Zealand</option>
+                            <option value="158">Nicaragua</option>
+                            <option value="159">Niger</option>
+                            <option value="160">Nigeria</option>
+                            <option value="161">Niue</option>
+                            <option value="162">Norfolk Island</option>
+                            <option value="163">Northern mariana Islands</option>
+                            <option value="164">Norway</option>
+                            <option value="165">Oman</option>
+                            <option value="166">Pakistan</option>
+                            <option value="167">Palau</option>
+                            <option value="168">Palestinian Territory, Occupied</option>
+                            <option value="169">Panama</option>
+                            <option value="170">Papua New Guinea</option>
+                            <option value="171">Paraguay</option>
+                            <option value="172">Peru</option>
+                            <option value="173">Philippines</option>
+                            <option value="174">Pitcairn</option>
+                            <option value="175">Poland</option>
+                            <option value="176">Portugal</option>
+                            <option value="177">Puerto Rico</option>
+                            <option value="178">Qatar</option>
+                            <option value="179">Romania</option>
+                            <option value="180">Russian Federation</option>
+                            <option value="181">Rwanda</option>
+                            <option value="182">Saint Helena</option>
+                            <option value="183">Saint Kitts And Nevis</option>
+                            <option value="184">Saint Lucia</option>
+                            <option value="185">Saint Martin</option>
+                            <option value="186">Saint Pierre And Miquelon</option>
+                            <option value="187">Samoa</option>
+                            <option value="188">San Marino</option>
+                            <option value="189">Sao tome and principe</option>
+                            <option value="190">Saudi Arabia</option>
+                            <option value="191">Senegal</option>
+                            <option value="192">Serbia</option>
+                            <option value="193">Seychelles</option>
+                            <option value="194">Sierra Leone</option>
+                            <option value="195">Singapore</option>
+                            <option value="196">Slovakia</option>
+                            <option value="197">Slovenia</option>
+                            <option value="198">Solomon Islands</option>
+                            <option value="199">Somalia</option>
+                            <option value="200">South Africa</option>
+                            <option value="201">South Georgia And The South Sandwich Islands</option>
+                            <option value="202">Spain</option>
+                            <option value="203">Sri Lanka</option>
+                            <option value="204">Sudan</option>
+                            <option value="205">Suriname</option>
+                            <option value="206">Svalbard And Jan Mayen</option>
+                            <option value="207">Swaziland</option>
+                            <option value="208">Sweden</option>
+                            <option value="209">Switzerland</option>
+                            <option value="210">Syrian Arab Republic</option>
+                            <option value="211">Taiwan, Province Of China</option>
+                            <option value="212">Tajikistan</option>
+                            <option value="213">Tanzania, United Republic Of Thailand</option>
+                            <option value="214">Timor-leste</option>
+                            <option value="215">Togo</option>
+                            <option value="216">Tokelau</option>
+                            <option value="217">Tonga</option>
+                            <option value="218">Trinidad And Tobago</option>
+                            <option value="219">Tunisia</option>
+                            <option value="220">Turkey</option>
+                            <option value="221">Turkmenistan</option>
+                            <option value="222">Turks And Caicos Islands</option>
+                            <option value="223">Tuvalu</option>
+                            <option value="224">Uganda</option>
+                            <option value="225">Ukraine</option>
+                            <option value="226">United Arab Emirates</option>
+                            <option value="227">United Kingdom</option>
+                            <option value="228">United States</option>
+                            <option value="229">United States Minor Outlying Islands</option>
+                            <option value="230">Uruguay</option>
+                            <option value="231">Uzbekistan</option>
+                            <option value="232">Vanuatu</option>
+                            <option value="233">Venezuela</option>
+                            <option selected="selected" value="234">Viet Nam</option>
+                            <option value="235">Virgin Islands, British</option>
+                            <option value="236">Virgin Islands, U.S.</option>
+                            <option value="237">Wallis And Futuna</option>
+                            <option value="238">Western Sahara</option>
+                            <option value="239">Yemen</option>
+                            <option value="240">Zambia</option>
+                            <option value="241">Zimbabwe</option>
+                    
+                        </select>
+                                                    </td>
+                                                    <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                                                </tr>
+                                                <tr class="lbError">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <span id="cphContent_RequiredFieldValidator9" style="display:none;">Yêu cầu chọn Quốc tịch</span></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap">Tỉnh thành:&nbsp;</td>
+                                                    <td>
+                                                        <select name="city" id="cphContent_ddlTinhThanh" class="selectpicker show-tick form-control" data-live-search="true" style="width: 100%;">
+                            <option value="3">An Giang</option>
+                            <option value="4">B&#224; Rịa - Vũng T&#224;u</option>
+                            <option value="5">Bắc Cạn</option>
+                            <option value="6">Bắc Giang</option>
+                            <option value="7">Bạc Li&#234;u</option>
+                            <option value="8">Bắc Ninh</option>
+                            <option value="9">Bến Tre</option>
+                            <option value="10">B&#236;nh Định</option>
+                            <option value="11">B&#236;nh Dương</option>
+                            <option value="12">B&#236;nh Phước</option>
+                            <option value="13">B&#236;nh Thuận</option>
+                            <option value="14">C&#224; Mau</option>
+                            <option value="15">Cần Thơ</option>
+                            <option value="16">Cao Bằng</option>
+                            <option value="17">Đ&#224; Nẵng</option>
+                            <option value="18">Đắc Lắc</option>
+                            <option value="19">Đắk N&#244;ng</option>
+                            <option value="20">Điện Bi&#234;n</option>
+                            <option value="21">Đồng Nai</option>
+                            <option value="22">Đồng Th&#225;p</option>
+                            <option value="23">Gia Lai</option>
+                            <option value="24">H&#224; Giang</option>
+                            <option value="25">H&#224; Nam</option>
+                            <option value="1">H&#224; Nội</option>
+                            <option value="26">H&#224; Tĩnh</option>
+                            <option value="27">Hải Dương</option>
+                            <option value="2">Hải Ph&#242;ng</option>
+                            <option value="28">Hậu Giang</option>
+                            <option value="29">H&#242;a B&#236;nh</option>
+                            <option value="30">Hưng Y&#234;n</option>
+                            <option value="31">Kh&#225;nh H&#242;a</option>
+                            <option value="32">Ki&#234;n Giang</option>
+                            <option value="33">Kon Tum</option>
+                            <option value="34">Lai Ch&#226;u</option>
+                            <option value="35">L&#226;m Đồng</option>
+                            <option value="36">Lạng Sơn</option>
+                            <option value="37">L&#224;o Cai</option>
+                            <option value="38">Long An</option>
+                            <option value="39">Nam Định</option>
+                            <option value="40">Nghệ An</option>
+                            <option value="41">Ninh B&#236;nh</option>
+                            <option value="42">Ninh Thuận</option>
+                            <option value="43">Ph&#250; Thọ</option>
+                            <option value="44">Ph&#250; Y&#234;n</option>
+                            <option value="45">Quảng B&#236;nh</option>
+                            <option value="46">Quảng Nam</option>
+                            <option value="47">Quảng Ng&#227;i</option>
+                            <option value="48">Quảng Ninh</option>
+                            <option value="49">Quảng Trị</option>
+                            <option value="50">S&#243;c Trăng</option>
+                            <option value="51">Sơn La</option>
+                            <option value="52">T&#226;y Ninh</option>
+                            <option value="53">Th&#225;i B&#236;nh</option>
+                            <option value="54">Th&#225;i Nguy&#234;n</option>
+                            <option value="55">Thanh Ho&#225;</option>
+                            <option value="56">Thừa Thi&#234;n - Huế</option>
+                            <option value="57">Tiền Giang</option>
+                            <option value="58">TP Hồ Ch&#237; Minh</option>
+                            <option value="59">Tr&#224; Vinh</option>
+                            <option value="60">Tuy&#234;n Quang</option>
+                            <option value="61">Vĩnh Long</option>
+                            <option value="62">Vĩnh Ph&#250;c</option>
+                            <option value="63">Y&#234;n B&#225;i</option>
+                    
+                        </select></td>
+                                                    <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                                                </tr>
+                                                <tr class="lbError">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <span id="cphContent_rfvTinhThanh" style="display:none;">Yêu cầu chọn Tỉnh thành</span></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap">Địa chỉ liên hệ:&nbsp;</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <textarea name="add" rows="3" cols="20" id="cphContent_txtDiaChi" class="form-control" placeholder="Địa chỉ liên hệ" onKeyUp="javascript:CheckMaxLength(this, 200);" style="width:100%;">
+                    </textarea>
+                                                            <div class="input-group-addon">
+                                                                <i class="fa fa-font"></i>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                    
+                                                    <td>&nbsp;<span style="color: red; font-size: 11px;">*</span></td>
+                                                </tr>
+                                                <tr class="lbError">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <span id="cphContent_RequiredFieldValidator11" style="display:none;">Yêu cầu nhập Địa chỉ liên hệ</span></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap">Thời hạn thẻ:&nbsp;</td>
+                                                    <td>
+                                                        <div class="radio icheck">
+                                                            <table id="cphContent_radThoiHanThe" class="radThoiHanThe">
+                            <tr>
+                                    <select name="time" id="cphContent_ddlNgheNghiep" class="selectpicker show-tick form-control" data-live-search="true" style="width: 100%;">
+                                            <option value="Theo Năm">Theo Năm</option>
+                                            <option value="92">Theo Quý</option>
+                                        </select>                          
+                                     </tr>
+                        </table>
+                                                        </div>
+                                                    </td>
+                    
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                
+                                                
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap"></td>
+                                                
+                                                </tr>
+                                                <tr>
+                                                    <td height="5px"></td>
+                                                </tr>
+                                                <tr style="line-height: 15px;">
+                                                    <td></td>
+                                                    <td nowrap="nowrap"></td>
+                                                    <td>
+                                                        <span style="color: red; font-size: 11px;">(*) Yêu cầu nhập thông tin</span>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap"></td>
+                                                    
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"></td>
+                                                    <td colspan="2"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td nowrap="nowrap"></td>
+                                                    <td nowrap="nowrap">
+                                                        <input type="submit" name="ctl00$cphContent$btnDangKy" value="Đăng ký"  class="btn btn-primary btn-flat" style="margin-left: 0px" />
+                                                        <input name="ctl00$cphContent$btnLamLai" type="reset" id="cphContent_btnLamLai" value="Đặt lại" class="btn btn-primary btn-flat" style="width: 80px;" />
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                            </form>
+                                            </table>
+                                        
+                    </div>
+  
+    <script src="{{ url_for('static', filename='components/jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ url_for('static', filename='components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="{{ url_for('static', filename='components/metisMenu/dist/metisMenu.min.js') }}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ url_for('static', filename='assets/js/sb-admin-2.js') }}"></script>
+    <!-- DataTables JavaScript -->
+    <script src="{{ url_for('static', filename='components/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+</body>
+
+</html>
