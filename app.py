@@ -1,5 +1,5 @@
 from flask import Flask, render_template,request,redirect,url_for,session
-from app2 import get_all, insert_data_book,delete_data_book,update_book_by_id,get_book_by_id,search_book
+from app2 import get_all, insert_data_book,delete_data_book,update_book_by_id,get_book_by_id
 from app3 import get_all2,insert_data_user
 app = Flask(__name__)
 app.secret_key = 'jjsdkfjkjdkfj515'
@@ -105,11 +105,6 @@ def method_name():
    del session["namedn"]
    return redirect(url_for("index"))
 
-@app.route('/search',method=['post'])
-def indexS(names):
-      bo_names = request.form.get('names')
-      search_book(bo_names)
-      return redirect(url_for('indexAB'))
 
 if __name__ == '__main__':
   app.run(host='127.0.0.1', port=8000, debug=True)

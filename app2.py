@@ -22,8 +22,6 @@ def get_book_by_id(book_id):
 def delete_data_book(book_id):
     collection.delete_one({"_id":  ObjectId(book_id)})
 
-def search_book(names):
-    return collection.find({'names':names})
 
     
 
