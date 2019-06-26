@@ -96,10 +96,7 @@ def indexNQ():
 
 @app.route('/QD')
 def indexQD():
-      if 'namedn' in session:
             return render_template("cate_list5.html")
-      else:
-            return redirect(url_for("index"))
 
 @app.route('/IFU')
 def indexIFU():
