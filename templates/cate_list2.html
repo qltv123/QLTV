@@ -36,19 +36,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Library Management</a>
+                <a class="navbar-brand" href="/TrangChu">Library Management</a>
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-nav">
                 <!-- <li class="active"><a href="#">Home</a></li> -->
-                <li><a href="#">About</a></li>
-                <li><a href="#">contact</a></li>
+                <li><a>About</a></li>
+                <li><a>contact</a></li>
                 <!-- <li><a href="#">Page 3</a></li> -->
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Welcome</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="/DN"><span class="glyphicon glyphicon-user"></span> Đăng nhập</a></li>
+                <li><a href="/out"><span class="glyphicon glyphicon-log-in"></span> Đăng xuất</a></li>
             </ul>
             <!-- /.navbar-top-links -->
             <div class="navbar-default sidebar" role="navigation">
@@ -56,17 +56,17 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
+                                <input href="/search" type="text" class="form-control" placeholder="Search...">
+                                <span  class="input-group-btn">
+                                    <button  class="btn btn-default" type="button">
+                                        <i  class="fa fa-search"></i>
                                     </button>
                                 </span>
                             </div>
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="TrangChu"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
+                            <a href="/TrangChu"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
                         </li>
                         <li>
                             <a href="/NQ"><i class="fa fa-book fa-fw"></i>Nội quy thư viện<span class="fa arrow"></span></a>
@@ -83,11 +83,18 @@
                             <!-- /.nav-second-level -->
                         </li> 
                         <li>
-                            <a href="AddCardUser"><i class="fa fa-tags"></i> Quản lý bạn đọc<span class="fa arrow"></span></a>
+                            <a><i class="fa fa-tags"></i> Quản lý bạn đọc<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/AddCardUser">Thêm thẻ bạn đọc</a>
+                                </li>
+                                <li>
+                                    <a href="/IFU">Danh sách bạn đọc</a>
+                                </li>
+                            </ul>
                             
                             <!-- /.nav-second-level -->
                         </li> 
-                       
                         
                             <!-- /.nav-second-level -->
                         
@@ -245,37 +252,37 @@
                                                     <td nowrap="nowrap">Nghề nghiệp:&nbsp;</td>
                                                     <td>
                                                         <select name="job" id="cphContent_ddlNgheNghiep" class="selectpicker show-tick form-control" data-live-search="true" style="width: 100%;">
-                            <option value="77">B&#225;c sỹ</option>
-                            <option value="92">Bi&#234;n tập vi&#234;n</option>
-                            <option value="96">Bộ đội</option>
-                            <option value="1">C&#225;n bộ vi&#234;n chức</option>
-                            <option value="13">C&#244;ng an</option>
-                            <option value="60">C&#244;ng Nghệ Th&#244;ng Tin</option>
-                            <option value="91">Điện lực</option>
-                            <option value="23">Du lịch</option>
-                            <option value="85">Dược Sỹ</option>
-                            <option value="71">Giảng vi&#234;n</option>
-                            <option value="56">Gi&#225;o vi&#234;n</option>
-                            <option value="70">Học sinh</option>
-                            <option value="48">Hưu tr&#237;</option>
-                            <option value="65">Kế to&#225;n</option>
-                            <option value="83">Kiểm to&#225;n</option>
-                            <option value="27">Kinh doanh</option>
-                            <option value="94">Kỹ Thuật vi&#234;n</option>
-                            <option value="37">L&#226;m nghiệp</option>
-                            <option value="81">Lập tr&#236;nh vi&#234;n</option>
-                            <option value="74">Luật sư</option>
-                            <option value="89">Mẫu gi&#225;o</option>
-                            <option value="68">Nh&#224; b&#225;o</option>
-                            <option value="78">Nội trợ</option>
-                            <option value="41">N&#244;ng nghiệp</option>
-                            <option value="51">Phi&#234;n dịch</option>
-                            <option value="50">Sinh vi&#234;n</option>
-                            <option value="11">T&#224;i ch&#237;nh</option>
-                            <option value="72">Thiết kế</option>
-                            <option value="67">Tự do</option>
-                            <option value="10">Tư ph&#225;p</option>
-                            <option value="19">Tư vấn</option>
+                            <option value="Bác sỹ">B&#225;c sỹ</option>
+                            <option value="Biên tập viên">Bi&#234;n tập vi&#234;n</option>
+                            <option value="Bộ đội">Bộ đội</option>
+                            <option value="Cán bộ viên chức">C&#225;n bộ vi&#234;n chức</option>
+                            <option value="Công an">C&#244;ng an</option>
+                            <option value="Công nghệ thôn tin">C&#244;ng Nghệ Th&#244;ng Tin</option>
+                            <option value="Điện lực">Điện lực</option>
+                            <option value="Du lịch">Du lịch</option>
+                            <option value="Dược Sỹ">Dược Sỹ</option>
+                            <option value="Giảng viên">Giảng vi&#234;n</option>
+                            <option value="Giáo viên">Gi&#225;o vi&#234;n</option>
+                            <option value="Học sinh">Học sinh</option>
+                            <option value="Hưu trí">Hưu tr&#237;</option>
+                            <option value="Kế toán">Kế to&#225;n</option>
+                            <option value="Kiểm toán">Kiểm to&#225;n</option>
+                            <option value="Kinh doanh">Kinh doanh</option>
+                            <option value="Kỹ thuật viên">Kỹ Thuật vi&#234;n</option>
+                            <option value="Lâm nghiệp">L&#226;m nghiệp</option>
+                            <option value="Lập trình viên">Lập tr&#236;nh vi&#234;n</option>
+                            <option value="Luật sư">Luật sư</option>
+                            <option value="Mẫu giáo">Mẫu gi&#225;o</option>
+                            <option value="Nhà báo">Nh&#224; b&#225;o</option>
+                            <option value="Nội trợ">Nội trợ</option>
+                            <option value="Nông nghiệp">N&#244;ng nghiệp</option>
+                            <option value="Phiên dịch">Phi&#234;n dịch</option>
+                            <option value="Sinh viên">Sinh vi&#234;n</option>
+                            <option value="Tài chính">T&#224;i ch&#237;nh</option>
+                            <option value="Thiết kế">Thiết kế</option>
+                            <option value="Tự do">Tự do</option>
+                            <option value="Tư pháp">Tư ph&#225;p</option>
+                            <option value="Tư vấn">Tư vấn</option>
                     
                         </select>
                                                     </td>

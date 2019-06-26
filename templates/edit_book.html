@@ -15,14 +15,17 @@
         <form method="POST"   >
                 <label class ="box1">Tên sách </label>
                 <input name="names" value="{{ book.names }}"/>
-                <br>       
-                <label class ="box2" >Nhà xuất bản</label>
+                <br>
+                <label class ="box2">Link ảnh </label>
+                <input name="link" value="{{ book.link }}"/>
+                <br>    
+                <label class ="box3" >Nhà xuất bản</label>
                 <input name="nxb" value = "{{ book.nxb }}"/>
                 <br>
-                <label class ="box3">Số lượng</label>
+                <label class ="box4">Số lượng</label>
                 <input name="sl" value = "{{ book.sl }}"/>
                 <br>
-                <label class ="box4">Giá</label>
+                <label class ="box5">Giá</label>
                 <input name="price" value = "{{ book.price }}"/>
                 <br>
                     <input type="submit" value="edit"/>
