@@ -89,10 +89,7 @@ def delete(book_id):
 
 @app.route('/NQ')
 def indexNQ():
-      if 'namedn' in session:
-            return render_template("cate_list4.html")
-      else:
-            return redirect(url_for("index"))
+      return render_template("cate_list4.html")
 
 @app.route('/QD')
 def indexQD():
